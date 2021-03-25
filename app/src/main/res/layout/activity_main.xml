@@ -14,21 +14,27 @@
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="107dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="216dp"
-        android:hint="Search"
-        android:textSize="24sp"
+        android:layout_marginEnd="141dp"
         android:background="@drawable/edittext_bg"
-        android:drawableStart="@drawable/ic_searchplayer"/>
+        android:drawableStart="@drawable/ic_searchplayer"
+        android:hint="Search"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btnSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="269dp"
-        android:text="Search"
-        android:background="#00B6FF"/>
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="162dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="161dp"
+        android:background="#00B6FF"
+        android:text="Search" />
 </RelativeLayout>
