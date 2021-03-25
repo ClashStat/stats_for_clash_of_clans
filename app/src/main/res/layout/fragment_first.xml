@@ -13,6 +13,9 @@
         android:layout_width="172dp"
         android:layout_height="93dp"
         android:text="First Fragment"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
