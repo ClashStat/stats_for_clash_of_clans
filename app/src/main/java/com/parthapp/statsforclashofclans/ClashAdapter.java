@@ -8,19 +8,18 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class ClashAdapter extends Thread{
+public class ClashAdapter{
     private static final String URL = "https://api.clashofclans.com";
     private final static String API_VERSION = "/v1";
     private final static String TAG = "Clash Adapter";
+    private static boolean exit = false;
 
     private final String token;
     private final OkHttpClient http;
 
     private String gameTag = "";
     private String suffix = "";
-    Response resData;
-
-
+    private Response resData;
 
     public ClashAdapter(String token) {
         this.token = token;
@@ -38,6 +37,7 @@ public class ClashAdapter extends Thread{
         OkHttpClient client = new OkHttpClient();
 
         Response resData = client.newCall(buildReq(suffix, formatTag(gameTag))).execute();
+        Log.i(TAG, resData.toString());
         if (!resData.isSuccessful())
         {
             switch(resData.code())
@@ -69,12 +69,26 @@ public class ClashAdapter extends Thread{
         this.gameTag = gameTag;
         this.suffix = suffix;
 
-        Thread thread = new Thread(this);
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    //function that retrieves data from the api and returns as a Response type res
+                    resData = makeAPICall(suffix, gameTag);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         thread.start();
         thread.join();
-
+        thread.sleep(50);
+        thread.setDaemon(true);
         return resData;
+    }
 
+    private static void stopThread() {
+        exit = true;
     }
 
     public String formatTag(String tag){
@@ -82,14 +96,10 @@ public class ClashAdapter extends Thread{
     }
 
 
-
-    public void run() {
-
-        try {
-            resData = makeAPICall(suffix, gameTag);
-        } catch (IOException e/*| JSONException e*/) {
-            e.printStackTrace();
-        }
-
-    }
+//
+//    public void run() {
+////        while(!exit) {
+//
+////        }
+//    }
 }
