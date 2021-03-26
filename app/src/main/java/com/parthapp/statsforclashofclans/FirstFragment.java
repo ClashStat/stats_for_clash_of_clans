@@ -4,9 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.io.IOException;
+
+import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,11 +23,13 @@ public class FirstFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
+    public static final String TAG = "FIRST FRAG";
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
 
     public FirstFragment() {
         // Required empty public constructor
@@ -49,6 +56,14 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "FIRST FRAG");
+        ClashAdapter clash = new ClashAdapter("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjEwYmRmOWExLTI4NGQtNDIzNS05ZGVjLThmZWEwZjQxMDI2NCIsImlhdCI6MTYxNjYxMTY5OSwic3ViIjoiZGV2ZWxvcGVyL2Y1YTljYzdhLWM3MzQtZThjNC1lYTZiLThhODBkNDQ1N2I0ZCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEwMC4xLjEyMi4yMDQiLCIyNC4wLjI0LjIzMCIsIjEwMC4xLjE3Ny4yNDciXSwidHlwZSI6ImNsaWVudCJ9XX0.AvfXk-wfWc3K98AdoPlW8dyID6cl8pyMclYG7kF42FVnhxmxYUO70nspLcSLC5vA4ZXLPe7JfMZrA407uEXk3g");
+        try {
+            Response res = clash.makeThreadAPICall("#2JQ299028","players/" );
+            Log.i(TAG, "HERE: " + res.body().string());
+        } catch (InterruptedException | IOException e) {
+            e.printStackTrace();
+        }
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
