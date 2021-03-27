@@ -79,8 +79,11 @@ This Android App that will fetch data from a popular strategy game known as Clas
 
 ### Models
 [Player]
+
 [Achievement]
+
 [League]
+
 [Troop]
 
 ### Networking
