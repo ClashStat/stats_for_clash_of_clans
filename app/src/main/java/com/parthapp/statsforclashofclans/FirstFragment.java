@@ -69,8 +69,8 @@ public class FirstFragment extends Fragment {
             if (res.isSuccessful()) {
                 Player player = gson.fromJson(res.body().string(), Player.class);
                 List<Troop> heroes = player.getHeroes();
-                for (Troop troop : heroes) {
-                    Log.i(TAG, troop.getName());
+                for(int i = 0; i < heroes.size(); i++){
+                    Log.i(TAG, heroes.get(i).getLevel().toString());
                 }
             }
         } catch (InterruptedException | IOException e) {

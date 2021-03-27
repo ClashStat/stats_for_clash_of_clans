@@ -16,9 +16,6 @@ public class ClashAdapter{
 
     private final String token;
     private final OkHttpClient http;
-
-    private String gameTag = "";
-    private String suffix = "";
     private Response resData;
 
     public ClashAdapter(String token) {
@@ -37,7 +34,6 @@ public class ClashAdapter{
         OkHttpClient client = new OkHttpClient();
 
         Response resData = client.newCall(buildReq(suffix, formatTag(gameTag))).execute();
-        Log.i(TAG, resData.toString());
         if (!resData.isSuccessful())
         {
             switch(resData.code())
@@ -66,8 +62,6 @@ public class ClashAdapter{
     }
 
     public Response makeThreadAPICall(String gameTag, String suffix) throws InterruptedException {
-        this.gameTag = gameTag;
-        this.suffix = suffix;
 
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -94,12 +88,4 @@ public class ClashAdapter{
     public String formatTag(String tag){
         return tag.replace("#", "%23");
     }
-
-
-//
-//    public void run() {
-////        while(!exit) {
-//
-////        }
-//    }
 }
