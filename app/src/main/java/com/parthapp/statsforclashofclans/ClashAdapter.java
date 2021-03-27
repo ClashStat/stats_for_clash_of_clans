@@ -69,6 +69,7 @@ public class ClashAdapter{
         this.gameTag = gameTag;
         this.suffix = suffix;
 
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -80,6 +81,7 @@ public class ClashAdapter{
                 }
             }
         });
+
         thread.start();
         thread.join();
         thread.sleep(50);
@@ -96,10 +98,15 @@ public class ClashAdapter{
     }
 
 
-//
-//    public void run() {
-////        while(!exit) {
-//
-////        }
-//    }
+    public void run() {
+
+        try {
+            resData = makeAPICall(suffix, gameTag);
+
+        } catch (IOException e/*| JSONException e*/) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
