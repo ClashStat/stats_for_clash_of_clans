@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-This Android App that will fetch data from a popular startegy game known as Clash of Clans using their public API, and display some of the key info that the player might find intresting.  
+This Android App that will fetch data from a popular strategy game known as Clash of Clans using their public API, and display some of the key info that the player might find interesting.  
 
 
 ### App Walkthough GIF
@@ -68,8 +68,7 @@ This Android App that will fetch data from a popular startegy game known as Clas
    * ...
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="/Walkthrough/wireframes.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
@@ -79,7 +78,13 @@ This Android App that will fetch data from a popular startegy game known as Clas
 [This section will be completed in Unit 9]
 
 ### Models
-[Add table of models]
+#### Player
+
+#### Achievement
+
+#### League
+
+#### Troop
 
 ### Networking
 -[Add list of network requests by screen ]

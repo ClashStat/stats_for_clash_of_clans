@@ -1,3 +1,4 @@
+
 package com.parthapp.statsforclashofclans;
 
 import android.util.Log;
