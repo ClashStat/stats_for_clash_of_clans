@@ -16,7 +16,7 @@ This Android App that will fetch data from a popular startegy game known as Clas
 
 ### App Walkthough GIF
 
-<img src='/Walkthrough/Unit_8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="/Walkthrough/Unit_8.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
