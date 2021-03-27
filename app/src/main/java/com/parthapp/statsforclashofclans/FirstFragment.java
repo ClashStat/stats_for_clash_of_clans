@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.io.IOException;
 
@@ -60,6 +61,9 @@ public class FirstFragment extends Fragment {
         ClashAdapter clash = new ClashAdapter("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjEwYmRmOWExLTI4NGQtNDIzNS05ZGVjLThmZWEwZjQxMDI2NCIsImlhdCI6MTYxNjYxMTY5OSwic3ViIjoiZGV2ZWxvcGVyL2Y1YTljYzdhLWM3MzQtZThjNC1lYTZiLThhODBkNDQ1N2I0ZCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEwMC4xLjEyMi4yMDQiLCIyNC4wLjI0LjIzMCIsIjEwMC4xLjE3Ny4yNDciXSwidHlwZSI6ImNsaWVudCJ9XX0.AvfXk-wfWc3K98AdoPlW8dyID6cl8pyMclYG7kF42FVnhxmxYUO70nspLcSLC5vA4ZXLPe7JfMZrA407uEXk3g");
         try {
             Response res = clash.makeThreadAPICall("#2JQ299028","players/" );
+            if(res == null){
+                Toast.makeText(getContext(), "CAN'T Access this Data", Toast.LENGTH_LONG).show();
+            }
             Log.i(TAG, "HERE: " + res.body().string());
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();

@@ -70,6 +70,7 @@ public class ClashAdapter extends Thread{
         this.suffix = suffix;
 
         Thread thread = new Thread(this);
+
         thread.start();
         thread.join();
 
@@ -88,8 +89,6 @@ public class ClashAdapter extends Thread{
         try {
             resData = makeAPICall(suffix, gameTag);
 
-//            json = new JSONObject(resData);
-//            Log.i(TAG, "Here: " + json.toString());
         } catch (IOException e/*| JSONException e*/) {
             e.printStackTrace();
         }

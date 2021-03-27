@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Frag 1"
-        android:id="@+id/firstFragment"/>
+        android:id="@+id/firstFragment"
+        android:title="Profile" />
 
-    <item android:title="Frag 2"
+    <item android:title="Troops"
         android:id="@+id/secondFragment"/>
 
-    <item android:title="Frag 3"
+    <item android:title="Achievements"
         android:id="@+id/thirdFragment"/>
 
 
