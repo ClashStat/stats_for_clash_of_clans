@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-This Android App that will fetch data from a popular startegy game known as Clash of Clans using their public API, and display some of the key info that the player might find intresting.  
+This Android App that will fetch data from a popular strategy game known as Clash of Clans using their public API, and display some of the key info that the player might find interesting.  
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
