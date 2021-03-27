@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-This Android App that will fetch data from a popular strategy game known as Clash of Clans using their public API, and display some of the key info that the player might find interesting.  
+This Android App will utilize the public API documentations of Clash of Clans which is a mobile gaming app. The functionality of this app focuses on showing the user a comprehensive overview of all their current game statistics from Home-Village and Builder-Village.  
 
 
 ### App Walkthough GIF
@@ -29,17 +29,14 @@ This Android App that will fetch data from a popular strategy game known as Clas
 
 ## Product Spec
 
-### 1. User Stories (Required and Optional)
+### 1. User Stories
+- [x] The user is able to sign-in using the #clashOfclansID
+- [ ] User is able to log-out
+- [ ] The user can persistently stay logged-in unless they log-out manually
+- [x] There are distributed fragments that show user statistics
+- [ ] The user can scroll using the scroll bar to see the remaining stats
+- [ ] The fragment in which the user is currently, changes color
 
-**Required Must-have Stories**
-
-* [fill in your required user stories here]
-* ...
-
-**Optional Nice-to-have Stories**
-
-* [fill in your required user stories here]
-* ...
 
 ### 2. Screen Archetypes
 
