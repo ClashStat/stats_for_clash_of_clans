@@ -1,3 +1,4 @@
+
 package com.parthapp.statsforclashofclans;
 
 import android.util.Log;
@@ -90,5 +91,4 @@ public class ClashAdapter{
     public String formatTag(String tag){
         return tag.replace("#", "%23");
     }
-
 }
