@@ -90,20 +90,4 @@ public class ClashAdapter{
     public String formatTag(String tag){
         return tag.replace("#", "%23");
     }
-<<<<<<< HEAD
-=======
-
-
-    public void run() {
-
-        try {
-            resData = makeAPICall(suffix, gameTag);
-
-        } catch (IOException e/*| JSONException e*/) {
-            e.printStackTrace();
-        }
-
-    }
-
->>>>>>> b8a69d90f3e87b3e49b5e06f62dfb79fc7077fb9
 }
