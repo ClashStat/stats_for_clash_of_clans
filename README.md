@@ -78,13 +78,13 @@ This Android App that will fetch data from a popular strategy game known as Clas
 [This section will be completed in Unit 9]
 
 ### Models
-[Player]
+##Player
 
-[Achievement]
+##Achievement
 
-[League]
+##League
 
-[Troop]
+##Troop
 
 ### Networking
 -[Add list of network requests by screen ]
