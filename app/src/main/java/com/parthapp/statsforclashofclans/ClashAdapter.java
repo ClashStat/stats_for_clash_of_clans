@@ -63,6 +63,7 @@ public class ClashAdapter{
 
     public Response makeThreadAPICall(String gameTag, String suffix) throws InterruptedException {
 
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -74,6 +75,7 @@ public class ClashAdapter{
                 }
             }
         });
+
         thread.start();
         thread.join();
         thread.sleep(50);
@@ -88,4 +90,20 @@ public class ClashAdapter{
     public String formatTag(String tag){
         return tag.replace("#", "%23");
     }
+<<<<<<< HEAD
+=======
+
+
+    public void run() {
+
+        try {
+            resData = makeAPICall(suffix, gameTag);
+
+        } catch (IOException e/*| JSONException e*/) {
+            e.printStackTrace();
+        }
+
+    }
+
+>>>>>>> b8a69d90f3e87b3e49b5e06f62dfb79fc7077fb9
 }
