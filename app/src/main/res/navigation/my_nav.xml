@@ -20,9 +20,4 @@
         android:name="com.parthapp.statsforclashofclans.ThirdFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third" />
-    <fragment
-        android:id="@+id/fourthFragment"
-        android:name="com.parthapp.statsforclashofclans.FourthFragment"
-        android:label="fragment_fourth"
-        tools:layout="@layout/fragment_fourth" />
 </navigation>
