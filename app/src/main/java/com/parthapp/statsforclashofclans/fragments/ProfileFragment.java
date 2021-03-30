@@ -4,11 +4,24 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.Gson;
+import com.parthapp.statsforclashofclans.BuildConfig;
+import com.parthapp.statsforclashofclans.ClashAdapter;
 import com.parthapp.statsforclashofclans.R;
+import com.parthapp.statsforclashofclans.models.Player;
+import com.parthapp.statsforclashofclans.models.Troop;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +34,8 @@ public class ProfileFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    public static final String  TAG = "Profile";
+    private final Gson gson = new Gson();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -51,10 +66,37 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.i(TAG, "Profile");
+        ClashAdapter clash = new ClashAdapter(BuildConfig.CLASH_API);
+        try {
+            Response resData = clash.makeThreadAPICall(randomgamerTag(), "players/");
+            if (resData.isSuccessful()) {
+                Player player = gson.fromJson(resData.body().string(), Player.class);
+                List<Troop> heroes = player.getHeroes();
+                for(int i = 0; i < heroes.size(); i++){
+                    Log.i(TAG, heroes.get(i).getLevel().toString());
+                }
+            }
+
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+
+    private String randomgamerTag() {
+        List<String> profileTag = new ArrayList<>();
+        profileTag.add("#LP8P008UJ");
+        profileTag.add("#PQJQYC9CQ");
+        profileTag.add("#2JQ299028");
+        Random getRand = new Random();
+//        Log.i(TAG, profileTag.get(getRand.nextInt(profileTag.size())));
+        return profileTag.get(getRand.nextInt(profileTag.size()));
+
     }
 
     @Override
