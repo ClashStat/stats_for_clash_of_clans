@@ -10,31 +10,32 @@
 
     <EditText
         android:id="@+id/userInput"
-        android:layout_width="130dp"
-        android:layout_height="50dp"
+        android:layout_width="169dp"
+        android:layout_height="39dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="106dp"
         android:layout_marginTop="216dp"
-        android:layout_marginEnd="141dp"
+        android:layout_marginEnd="136dp"
         android:background="@drawable/edittext_bg"
         android:drawableStart="@drawable/ic_searchplayer"
         android:hint="Search"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btnSearch"
-        android:layout_width="wrap_content"
+        android:layout_width="143dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userInput"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="162dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="161dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="136dp"
         android:background="#00B6FF"
+        android:gravity="center"
         android:text="Search" />
 </RelativeLayout>
