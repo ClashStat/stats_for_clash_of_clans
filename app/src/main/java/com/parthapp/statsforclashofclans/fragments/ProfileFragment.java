@@ -19,6 +19,7 @@ import com.parthapp.statsforclashofclans.models.Troop;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import okhttp3.Response;
@@ -72,7 +73,7 @@ public class ProfileFragment extends Fragment {
         try {
             Response resData = clash.makeThreadAPICall(randomgamerTag(), "players/");
             if (resData.isSuccessful()) {
-                Player player = gson.fromJson(resData.body().string(), Player.class);
+                Player player = gson.fromJson(Objects.requireNonNull(resData.body()).string(), Player.class);
                 List<Troop> heroes = player.getHeroes();
                 for(int i = 0; i < heroes.size(); i++){
                     Log.i(TAG, heroes.get(i).getLevel().toString());

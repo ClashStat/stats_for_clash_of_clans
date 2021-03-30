@@ -76,7 +76,6 @@ public class ClashAdapter{
         });
         thread.start();
         thread.join();
-        thread.sleep(50);
         thread.setDaemon(true);
         return resData;
     }
