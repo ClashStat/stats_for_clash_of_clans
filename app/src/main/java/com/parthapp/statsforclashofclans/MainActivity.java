@@ -15,6 +15,7 @@ import com.jaeger.library.StatusBarUtil;
 public class MainActivity extends AppCompatActivity {
     private Button btnSearch;
     private EditText userTag;
+    private String userTagString = "";
     public static final String TAG = "Main Activity";
 
     @Override
@@ -38,17 +39,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void openFragmentActivity(){
         Intent intent = new Intent(this, FragmentActivity.class);
+        intent.putExtra("userTag",userTagString );
+//        Toast.makeText(this, "Added userTag to intent", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
     }
 
     public boolean isUserTagValid(){
-        if(userTag.getText().toString().equals("")){
+        userTagString = userTag.getText().toString();
+        if(userTagString.equals("")){
             Toast.makeText(this, "Can't have Empty User Tag", Toast.LENGTH_SHORT).show();
             return false;
         }
         else{
-            Toast.makeText(this, "Good to go", Toast.LENGTH_SHORT).show();
+            if(userTagString.matches("^#[A-Z0-9]{9}$")){
+                Toast.makeText(this, "Matches", Toast.LENGTH_LONG).show();
+                Log.i(TAG,"SETTING USERTAG in MAIN: " + userTagString);
+            }
+            else{
+                Toast.makeText(this, "Incorrect Format!", Toast.LENGTH_LONG).show();
+                return false;
+            }
             return true;
         }
     }

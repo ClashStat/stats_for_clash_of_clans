@@ -29,7 +29,9 @@ public class FragmentActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
-
+        Bundle extras = getIntent().getExtras();
+        String userTag = extras.getString("userTag");
+        Log.i(TAG, "HERE IN FRAG ACT: " + userTag);
         bottomNavigationView = findViewById(R.id.bottomNavigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -37,19 +39,22 @@ public class FragmentActivity extends AppCompatActivity {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
                     case R.id.action_troops:
-                        Toast.makeText(FragmentActivity.this, "Troops", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(FragmentActivity.this, "Troops", Toast.LENGTH_SHORT).show();
                         fragment = new TroopsFragment();
                         break;
                     case R.id.action_achieve:
-                        Toast.makeText(FragmentActivity.this, "Achievements", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(FragmentActivity.this, "Achievements", Toast.LENGTH_SHORT).show();
                         fragment = new AchievementFragment();
                         break;
                     case R.id.action_profile:
                     default:
-                        Toast.makeText(FragmentActivity.this, "Profile", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(FragmentActivity.this, "Profile", Toast.LENGTH_SHORT).show();
                         fragment = new ProfileFragment();
                         break;
                 }
+                Bundle bundle = new Bundle();
+                bundle.putString("userTag", userTag);
+                fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;
             }

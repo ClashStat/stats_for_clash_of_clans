@@ -62,7 +62,6 @@ public class ClashAdapter{
     }
 
     public Response makeThreadAPICall(String gameTag, String suffix) throws InterruptedException {
-        Log.i(TAG, gameTag + suffix);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
