@@ -1,4 +1,4 @@
-package com.parthapp.statsforclashofclans;
+package com.parthapp.statsforclashofclans.fragments;
 
 import android.os.Bundle;
 
@@ -8,37 +8,40 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.parthapp.statsforclashofclans.BuildConfig;
+import com.parthapp.statsforclashofclans.ClashAdapter;
+import com.parthapp.statsforclashofclans.R;
 import com.parthapp.statsforclashofclans.models.Player;
 import com.parthapp.statsforclashofclans.models.Troop;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FirstFragment#newInstance} factory method to
+ * Use the {@link ProfileFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FirstFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
-    public static final String TAG = "FIRST FRAG";
     private static final String ARG_PARAM2 = "param2";
+    public static final String  TAG = "Profile";
+    private final Gson gson = new Gson();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private final Gson gson = new Gson();
 
-
-    public FirstFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -48,11 +51,11 @@ public class FirstFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment FirstFragment.
+     * @return A new instance of fragment ProfileFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static FirstFragment newInstance(String param1, String param2) {
-        FirstFragment fragment = new FirstFragment();
+    public static ProfileFragment newInstance(String param1, String param2) {
+        ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,18 +66,20 @@ public class FirstFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG, "FIRST FRAG");
+
+        Log.i(TAG, "Profile");
         ClashAdapter clash = new ClashAdapter(BuildConfig.CLASH_API);
         try {
-            Response res = clash.makeThreadAPICall("#2JQ299028","players/");
-            if (res.isSuccessful()) {
-                Player player = gson.fromJson(res.body().string(), Player.class);
+            Response resData = clash.makeThreadAPICall(randomgamerTag(), "players/");
+            if (resData.isSuccessful()) {
+                Player player = gson.fromJson(resData.body().string(), Player.class);
                 List<Troop> heroes = player.getHeroes();
                 for(int i = 0; i < heroes.size(); i++){
                     Log.i(TAG, heroes.get(i).getLevel().toString());
                 }
             }
-        } catch (InterruptedException | IOException e) {
+
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         if (getArguments() != null) {
@@ -83,10 +88,21 @@ public class FirstFragment extends Fragment {
         }
     }
 
+    private String randomgamerTag() {
+        List<String> profileTag = new ArrayList<>();
+        profileTag.add("#LP8P008UJ");
+        profileTag.add("#PQJQYC9CQ");
+        profileTag.add("#2JQ299028");
+        Random getRand = new Random();
+//        Log.i(TAG, profileTag.get(getRand.nextInt(profileTag.size())));
+        return profileTag.get(getRand.nextInt(profileTag.size()));
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 }

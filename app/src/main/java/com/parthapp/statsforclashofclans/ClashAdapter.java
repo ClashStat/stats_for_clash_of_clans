@@ -31,9 +31,8 @@ public class ClashAdapter{
                 .build();
     }
 
-    private Response makeAPICall(String suffix, String gameTag) throws IOException {
+    public Response makeAPICall(String suffix, String gameTag) throws IOException {
         OkHttpClient client = new OkHttpClient();
-
         Response resData = client.newCall(buildReq(suffix, formatTag(gameTag))).execute();
         if (!resData.isSuccessful())
         {
@@ -63,8 +62,7 @@ public class ClashAdapter{
     }
 
     public Response makeThreadAPICall(String gameTag, String suffix) throws InterruptedException {
-
-
+        Log.i(TAG, gameTag + suffix);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -76,16 +74,11 @@ public class ClashAdapter{
                 }
             }
         });
-
         thread.start();
         thread.join();
         thread.sleep(50);
         thread.setDaemon(true);
         return resData;
-    }
-
-    private static void stopThread() {
-        exit = true;
     }
 
     public String formatTag(String tag){
