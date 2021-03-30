@@ -19,6 +19,7 @@ import com.parthapp.statsforclashofclans.models.Troop;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import okhttp3.Response;
@@ -36,6 +37,7 @@ public class ProfileFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     public static final String  TAG = "Profile";
     private final Gson gson = new Gson();
+    private static String userTag = "";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -66,13 +68,14 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Log.i(TAG, "Profile");
+        Bundle bundle = this.getArguments();
+        userTag = bundle.getString("userTag");
+        Log.i(TAG,"HERE IN PROFILE: " + userTag);
         ClashAdapter clash = new ClashAdapter(BuildConfig.CLASH_API);
         try {
-            Response resData = clash.makeThreadAPICall(randomgamerTag(), "players/");
+            Response resData = clash.makeThreadAPICall(userTag, "players/");
             if (resData.isSuccessful()) {
-                Player player = gson.fromJson(resData.body().string(), Player.class);
+                Player player = gson.fromJson(Objects.requireNonNull(resData.body()).string(), Player.class);
                 List<Troop> heroes = player.getHeroes();
                 for(int i = 0; i < heroes.size(); i++){
                     Log.i(TAG, heroes.get(i).getLevel().toString());
@@ -88,7 +91,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private String randomgamerTag() {
+    private String getGamerTag() {
         List<String> profileTag = new ArrayList<>();
         profileTag.add("#LP8C008UJ");
         profileTag.add("#PQJQYC9CQ");
@@ -96,7 +99,6 @@ public class ProfileFragment extends Fragment {
         Random getRand = new Random();
 //        Log.i(TAG, profileTag.get(getRand.nextInt(profileTag.size())));
         return profileTag.get(getRand.nextInt(profileTag.size()));
-
     }
 
     @Override
