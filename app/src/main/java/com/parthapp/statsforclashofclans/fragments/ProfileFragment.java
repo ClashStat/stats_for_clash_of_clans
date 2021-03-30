@@ -73,7 +73,7 @@ public class ProfileFragment extends Fragment {
         Log.i(TAG,"HERE IN PROFILE: " + userTag);
         ClashAdapter clash = new ClashAdapter(BuildConfig.CLASH_API);
         try {
-            Response resData = clash.makeThreadAPICall(userTag, "players/");
+            Response resData = clash.makeThreadAPICall(getGamerTag(userTag), "players/");
             if (resData.isSuccessful()) {
                 Player player = gson.fromJson(Objects.requireNonNull(resData.body()).string(), Player.class);
                 List<Troop> heroes = player.getHeroes();
@@ -91,14 +91,18 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private String getGamerTag() {
-        List<String> profileTag = new ArrayList<>();
-        profileTag.add("#LP8C008UJ");
-        profileTag.add("#PQJQYC9CQ");
-        profileTag.add("#2JQ299028");
-        Random getRand = new Random();
-//        Log.i(TAG, profileTag.get(getRand.nextInt(profileTag.size())));
-        return profileTag.get(getRand.nextInt(profileTag.size()));
+    private String getGamerTag(String userTag) {
+        if(userTag.equals("")) {
+            List<String> profileTag = new ArrayList<>();
+            profileTag.add("#LP8C008UJ");
+            profileTag.add("#PQJQYC9CQ");
+            profileTag.add("#2JQ299028");
+            Random getRand = new Random();
+            return profileTag.get(getRand.nextInt(profileTag.size()));
+        }
+        else{
+            return userTag;
+        }
     }
 
     @Override

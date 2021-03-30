@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText userTag;
     private String userTagString = "";
     public static final String TAG = "Main Activity";
+    private static int buttonCounter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                buttonCounter++;
                 if(isUserTagValid()){
+                    openFragmentActivity();
+                }
+                if(buttonCounter == 2){
                     openFragmentActivity();
                 }
             }
@@ -40,27 +45,27 @@ public class MainActivity extends AppCompatActivity {
     public void openFragmentActivity(){
         Intent intent = new Intent(this, FragmentActivity.class);
         intent.putExtra("userTag",userTagString );
-//        Toast.makeText(this, "Added userTag to intent", Toast.LENGTH_SHORT).show();
         startActivity(intent);
         finish();
     }
 
     public boolean isUserTagValid(){
         userTagString = userTag.getText().toString();
+        Log.i(TAG, String.valueOf(buttonCounter == 2));
         if(userTagString.equals("")){
-            Toast.makeText(this, "Can't have Empty User Tag", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Empty, click once more to choose randomly", Toast.LENGTH_SHORT).show();
             return false;
         }
         else{
             if(userTagString.matches("^#[A-Z0-9]{9}$")){
                 Toast.makeText(this, "Matches", Toast.LENGTH_LONG).show();
-                Log.i(TAG,"SETTING USERTAG in MAIN: " + userTagString);
+                Log.i(TAG,"Setting userTag in MAIN: " + userTagString);
+                return true;
             }
             else{
                 Toast.makeText(this, "Incorrect Format!", Toast.LENGTH_LONG).show();
                 return false;
             }
-            return true;
         }
     }
 }
