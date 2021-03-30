@@ -93,6 +93,7 @@ public class ProfileFragment extends Fragment {
 
     private String getGamerTag(String userTag) {
         if(userTag.equals("")) {
+            Log.i(TAG, "Choosing Randomly");
             List<String> profileTag = new ArrayList<>();
             profileTag.add("#LP8C008UJ");
             profileTag.add("#PQJQYC9CQ");
