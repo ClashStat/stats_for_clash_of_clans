@@ -67,6 +67,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/wireframes.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
 
