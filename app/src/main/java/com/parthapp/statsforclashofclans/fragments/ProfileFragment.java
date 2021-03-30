@@ -90,7 +90,7 @@ public class ProfileFragment extends Fragment {
 
     private String randomgamerTag() {
         List<String> profileTag = new ArrayList<>();
-        profileTag.add("#LP8POO8UJ");
+        profileTag.add("#LP8C008UJ");
         profileTag.add("#PQJQYC9CQ");
         profileTag.add("#2JQ299028");
         Random getRand = new Random();
