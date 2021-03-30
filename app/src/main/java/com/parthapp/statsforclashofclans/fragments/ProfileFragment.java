@@ -71,7 +71,7 @@ public class ProfileFragment extends Fragment {
         Log.i(TAG, "Profile");
         ClashAdapter clash = new ClashAdapter(BuildConfig.CLASH_API);
         try {
-            Response resData = clash.makeThreadAPICall(randomGamerTag(), "players/");
+            Response resData = clash.makeThreadAPICall(randomgamerTag(), "players/");
             if (resData.isSuccessful()) {
                 Player player = gson.fromJson(Objects.requireNonNull(resData.body()).string(), Player.class);
                 List<Troop> heroes = player.getHeroes();
@@ -89,7 +89,7 @@ public class ProfileFragment extends Fragment {
         }
     }
 
-    private String randomGamerTag() {
+    private String randomgamerTag() {
         List<String> profileTag = new ArrayList<>();
         profileTag.add("#LP8C008UJ");
         profileTag.add("#PQJQYC9CQ");
