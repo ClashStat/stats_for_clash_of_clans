@@ -11,7 +11,7 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-This Android App that will fetch data from a popular strategy game known as Clash of Clans using their public API, and display some of the key info that the player might find interesting.  
+This Android App will utilize the public API documentations of Clash of Clans which is a mobile gaming app. The functionality of this app focuses on showing the user a comprehensive overview of all their current game statistics from Home-Village and Builder-Village.  
 
 
 ### App Walkthough GIF
@@ -19,53 +19,49 @@ This Android App that will fetch data from a popular strategy game known as Clas
 <img src="/Walkthrough/Unit_8.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Mobile Game Status App
+- **Mobile:** This app is mainly for a Mobile phone since it will require the user to input the device IP address and the mobile game's unique ID. However this may be also remotely used as a web browser application
+- **Story:** This app requires the user to first have a Clash of Clans account to be able to access the app using their unique game ID. On signing in the user will be able to see all the achievements, troops, heroes, current building levels etc., in both, the Home Village and the Builder Village.
+- **Market:** Any person that has plays Clash of Clans will be able to utilize this application.
+- **Habit:** Due to the magnitude of information and items on the actual game, it is tough to keep a comprehensive check on what is which level and what needs upgrade. This app can provide that and it can be used as much or as little the user likes to review accurate account information.
+- **Scope:** Applications of this kind usually sum up the player statistics and allows the user to remotely upgrade items in the game in real time.
 
 ## Product Spec
 
-### 1. User Stories (Required and Optional)
+### 1. User Stories
+- [x] The user is able to sign-in using the #clashOfclansID
+- [ ] User is able to log-out
+- [ ] The user can persistently stay logged-in unless they log-out manually
+- [x] There are distributed fragments that show user statistics
+- [ ] The user can scroll using the scroll bar to see the remaining stats
+- [ ] The fragment in which the user is currently, changes color
 
-**Required Must-have Stories**
-
-* [fill in your required user stories here]
-* ...
-
-**Optional Nice-to-have Stories**
-
-* [fill in your required user stories here]
-* ...
 
 ### 2. Screen Archetypes
-
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login Screen
+   * The user must enter their unique Clash of Clans ID, starting with a #
+* Profile Page
+   * Once the user has logged in, he/she can see their own Name, ID, Game Level, Townhall levels, Clan Name and Rank, Numbers of VSBattles won, etc. The user may checkout the Troops page or Achievements page
+* Troops
+   * On this fragment of the app, the user will be able to see all the Heroes that he/she has along with their level, followed by all the unlocked barracks and dark barracks troops along with their levels. The user may then click on the Achievements option on the bottom right corner of the app.
+* Achievements
+   * This fragment of the app shows the user all the Game-Creator made achievements with an accurate representation of how close the user is to completing them or how many have already been completed or remain pending. 
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
-
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+*  Login Page
+*  Profile Page
+*  Troops
+*  Achievements
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Login screen -> input the unique game id
+* Profile page -> player's profile information 
+* Troops -> all the troops for war and their levels
+* Achievements -> all the user achievements in the game and success rate
+* Logout -> log out of the app and go back to the Login page
 
 ## Wireframes
 <img src="/Walkthrough/wireframes.jpg" width=600>
