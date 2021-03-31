@@ -13,6 +13,10 @@ public class Clan {
     @Expose
     private Integer clanLevel;
 
+    @SerializedName("badgeUrls")
+    @Expose
+    private BadgeUrl badgeUrl;
+
     //GETTERS
     public String getName()
     {

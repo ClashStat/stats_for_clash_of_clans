@@ -12,6 +12,9 @@ public class League {
     @Expose
     private String name;
 
+    @SerializedName("iconUrls")
+    @Expose
+    private IconUrl iconUrls;
 
     public Integer getId()
     {
