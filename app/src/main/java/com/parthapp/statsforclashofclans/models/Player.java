@@ -11,7 +11,7 @@ public class Player {
     @Expose
     private League league;
 
-    @SerializedName("Clan")
+    @SerializedName("clan")
     @Expose
     private Clan Clan;
 
@@ -211,7 +211,7 @@ public class Player {
         return versusBattleWinCount;
     }
 
-    public com.parthapp.statsforclashofclans.models.Clan getClan() {
+    public Clan getClan() {
         return Clan;
     }
 }
