@@ -34,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 if(isUserTagValid()){
                     openFragmentActivity();
                 }
-//                if(buttonCounter == 2 && isUserTagValid()){
-//                    openFragmentActivity();
-//                }
             }
         });
     }
@@ -50,11 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean isUserTagValid(){
         userTagString = userTag.getText().toString();
-        Log.i(TAG, String.valueOf(buttonCounter == 2));
         if(userTagString.equals("")){
             buttonCounter++;
             if(buttonCounter == 2) {
-                Log.i(TAG, "In here");
                 return true;
             }
             Log.i(TAG, String.valueOf(buttonCounter));
@@ -65,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         else{
             if(userTagString.matches("^#[A-Z0-9]{9}$")){
                 Toast.makeText(this, "Matches", Toast.LENGTH_LONG).show();
-                Log.i(TAG,"Setting userTag in MAIN: " + userTagString);
                 return true;
             }
             else{
