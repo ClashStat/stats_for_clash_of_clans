@@ -79,6 +79,7 @@ public class ProfileFragment extends Fragment {
         Log.i(TAG, TAG+": "+ clanURL);
         String leagueURL =  player.getLeague().getIconUrls().getMedium();
         Log.i(TAG, TAG + ": " + leagueURL);
+        
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
