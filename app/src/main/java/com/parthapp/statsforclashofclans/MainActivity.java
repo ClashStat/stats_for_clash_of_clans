@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
                 if(isUserTagValid()){
                     openFragmentActivity();
                 }
-                if(buttonCounter == 2 && isUserTagValid()){
-                    openFragmentActivity();
-                }
+//                if(buttonCounter == 2 && isUserTagValid()){
+//                    openFragmentActivity();
+//                }
             }
         });
     }
@@ -52,14 +52,15 @@ public class MainActivity extends AppCompatActivity {
         userTagString = userTag.getText().toString();
         Log.i(TAG, String.valueOf(buttonCounter == 2));
         if(userTagString.equals("")){
+            buttonCounter++;
             if(buttonCounter == 2) {
                 Log.i(TAG, "In here");
                 return true;
-            }else{
-                buttonCounter++;
-                Toast.makeText(this, "Empty, click once more to choose randomly", Toast.LENGTH_SHORT).show();
-                return false;
             }
+            Log.i(TAG, String.valueOf(buttonCounter));
+            Toast.makeText(this, "Empty, click once more to choose randomly", Toast.LENGTH_SHORT).show();
+            return false;
+
         }
         else{
             if(userTagString.matches("^#[A-Z0-9]{9}$")){
