@@ -63,8 +63,8 @@ public class AchievementFragment extends Fragment {
         Player player = gson.fromJson(userTag, Player.class);
         String playerName = player.getName();
         Log.i(TAG, "Achivement!!!!!!!!!!!!!" + playerName);
-        List<Achievement> achivements = player.getAchievements();
-        for(Achievement a: achivements){
+        List<Achievement> achievements = player.getAchievements();
+        for(Achievement a: achievements){
             Log.i(TAG, a.getName());
         }
         if (getArguments() != null) {
