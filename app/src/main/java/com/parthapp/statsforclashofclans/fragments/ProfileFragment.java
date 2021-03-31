@@ -14,6 +14,7 @@ import com.parthapp.statsforclashofclans.BuildConfig;
 import com.parthapp.statsforclashofclans.ClashAdapter;
 import com.parthapp.statsforclashofclans.R;
 import com.parthapp.statsforclashofclans.models.BadgeUrl;
+import com.parthapp.statsforclashofclans.models.Clan;
 import com.parthapp.statsforclashofclans.models.Player;
 import com.parthapp.statsforclashofclans.models.Troop;
 
@@ -71,6 +72,7 @@ public class ProfileFragment extends Fragment {
         Bundle bundle = this.getArguments();
         String userTag = bundle.getString("resData");
         Player player = gson.fromJson(userTag, Player.class);
+        //Clan clanLogo = player.getClan();
         String playerName = player.getName();
         Log.i(TAG,TAG + playerName);
         if (getArguments() != null) {
