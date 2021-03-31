@@ -72,12 +72,12 @@ public class ProfileFragment extends Fragment {
         Bundle bundle = this.getArguments();
         String userTag = bundle.getString("resData");
         Player player = gson.fromJson(userTag, Player.class);
-        //Clan clanLogo = player.getClan();
+
         String playerName = player.getName();
-        String badgeURL = player.getClan().getBadgeUrl().getMedium();
-        System.out.println("THIS IS ICONURL_________________" + badgeURL);
         Log.i(TAG,TAG + playerName);
-        //Log.i(TAG, TAG + iconURL);
+        String clanURL = player.getClan().getBadgeUrl().getMedium();
+        Log.i(TAG, TAG+": "+ clanURL);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

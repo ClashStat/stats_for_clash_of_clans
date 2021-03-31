@@ -7,7 +7,7 @@ public class Clan {
 
     @SerializedName("name")
     @Expose
-    private String name;
+    private String name = "";
 
     @SerializedName("clanLevel")
     @Expose
