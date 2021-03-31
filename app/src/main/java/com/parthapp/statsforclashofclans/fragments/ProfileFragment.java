@@ -13,6 +13,8 @@ import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.BuildConfig;
 import com.parthapp.statsforclashofclans.ClashAdapter;
 import com.parthapp.statsforclashofclans.R;
+import com.parthapp.statsforclashofclans.models.BadgeUrl;
+import com.parthapp.statsforclashofclans.models.Clan;
 import com.parthapp.statsforclashofclans.models.Player;
 import com.parthapp.statsforclashofclans.models.Troop;
 
@@ -70,8 +72,14 @@ public class ProfileFragment extends Fragment {
         Bundle bundle = this.getArguments();
         String userTag = bundle.getString("resData");
         Player player = gson.fromJson(userTag, Player.class);
+
         String playerName = player.getName();
         Log.i(TAG,TAG + playerName);
+        String clanURL = player.getClan().getBadgeUrl().getMedium();
+        Log.i(TAG, TAG+": "+ clanURL);
+        String leagueURL =  player.getLeague().getIconUrls().getMedium();
+        Log.i(TAG, TAG + ": " + leagueURL);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

@@ -3,30 +3,31 @@ package com.parthapp.statsforclashofclans.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class League {
-    @SerializedName("id")
-    @Expose
-    private Integer id;
+public class Clan {
 
     @SerializedName("name")
     @Expose
     private String name;
 
-    @SerializedName("iconUrls")
+    @SerializedName("clanLevel")
     @Expose
-    private IconUrl iconUrls;
+    private Integer clanLevel;
 
-    public Integer getId()
-    {
-        return id;
-    }
+    @SerializedName("badgeUrls")
+    @Expose
+    private BadgeUrl badgeUrl;
 
     public String getName()
     {
         return name;
     }
 
-    public IconUrl getIconUrls() {
-        return iconUrls;
+    public Integer getClanLevel()
+    {
+        return clanLevel;
+    }
+
+    public BadgeUrl getBadgeUrl() {
+        return badgeUrl;
     }
 }

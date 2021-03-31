@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".FragmentActivity">
 
+
     <FrameLayout
         android:id="@+id/flContainer"
         android:layout_width="match_parent"
@@ -26,13 +27,19 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#FB0000"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+=======
         android:background="#FB0000"
         app:itemBackground="@drawable/navigation_bar"
         app:itemTextColor="@color/black"
         app:itemIconTint="@color/black"
+>>>>>>> 7704aa7a0181cf94a042fd974828ef8a8629ebee
         app:menu="@menu/bottom_menu" />
 
     <fragment

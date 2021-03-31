@@ -11,6 +11,10 @@ public class Player {
     @Expose
     private League league;
 
+    @SerializedName("clan")
+    @Expose
+    private Clan Clan;
+
     @SerializedName("role")
     @Expose
     private String role;
@@ -205,5 +209,9 @@ public class Player {
     public Integer getBuilderBaseWinCount()
     {
         return versusBattleWinCount;
+    }
+
+    public Clan getClan() {
+        return Clan;
     }
 }
