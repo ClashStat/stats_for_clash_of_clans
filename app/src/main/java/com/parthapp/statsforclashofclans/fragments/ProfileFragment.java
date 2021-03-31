@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.BuildConfig;
@@ -32,6 +34,14 @@ import okhttp3.Response;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
+
+    private TextView profile;
+    private TextView username;
+    private TextView level;
+    private TextView clan;
+    private ImageView clan_badge_url;
+    private TextView home_village;
+    private TextView builder_base;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
