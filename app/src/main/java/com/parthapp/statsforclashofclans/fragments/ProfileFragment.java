@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.BuildConfig;
 import com.parthapp.statsforclashofclans.ClashAdapter;
 import com.parthapp.statsforclashofclans.R;
+import com.parthapp.statsforclashofclans.models.BadgeUrl;
 import com.parthapp.statsforclashofclans.models.Player;
 import com.parthapp.statsforclashofclans.models.Troop;
 
