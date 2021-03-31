@@ -74,6 +74,7 @@ public class ProfileFragment extends Fragment {
         Player player = gson.fromJson(userTag, Player.class);
         //Clan clanLogo = player.getClan();
         String playerName = player.getName();
+        String iconURL = player.getClan().
         Log.i(TAG,TAG + playerName);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);

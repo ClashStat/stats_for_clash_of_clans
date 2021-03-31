@@ -26,4 +26,7 @@ public class League {
         return name;
     }
 
+    public IconUrl getIconUrls() {
+        return iconUrls;
+    }
 }
