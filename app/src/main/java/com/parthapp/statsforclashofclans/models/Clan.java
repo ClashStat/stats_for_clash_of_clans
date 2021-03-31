@@ -17,7 +17,6 @@ public class Clan {
     @Expose
     private BadgeUrl badgeUrl;
 
-    //GETTERS
     public String getName()
     {
         return name;
@@ -28,4 +27,7 @@ public class Clan {
         return clanLevel;
     }
 
+    public BadgeUrl getBadgeUrl() {
+        return badgeUrl;
+    }
 }
