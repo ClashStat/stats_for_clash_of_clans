@@ -4,11 +4,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.R;
+import com.parthapp.statsforclashofclans.models.Player;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,7 +24,8 @@ public class AchievementFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    public static final String TAG = "Achievement";
+    private final Gson gson = new Gson();
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -51,6 +55,11 @@ public class AchievementFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Bundle bundle = this.getArguments();
+        String userTag = bundle.getString("resData");
+        Player player = gson.fromJson(userTag, Player.class);
+        String playerName = player.getName();
+        Log.i(TAG, "Achivement!!!!!!!!!!!!!" + playerName);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

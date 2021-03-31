@@ -37,7 +37,6 @@ public class ProfileFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     public static final String  TAG = "Profile";
     private final Gson gson = new Gson();
-    private static String userTag = "";
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -69,40 +68,13 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = this.getArguments();
-        userTag = bundle.getString("userTag");
-        Log.i(TAG,"HERE IN PROFILE: " + userTag);
-        ClashAdapter clash = new ClashAdapter(BuildConfig.CLASH_API);
-        try {
-            Response resData = clash.makeThreadAPICall(getGamerTag(userTag), "players/");
-            if (resData.isSuccessful()) {
-                Player player = gson.fromJson(Objects.requireNonNull(resData.body()).string(), Player.class);
-                List<Troop> heroes = player.getHeroes();
-                for(int i = 0; i < heroes.size(); i++){
-                    Log.i(TAG, heroes.get(i).getLevel().toString());
-                }
-            }
-
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
+        String userTag = bundle.getString("resData");
+        Player player = gson.fromJson(userTag, Player.class);
+        String playerName = player.getName();
+        Log.i(TAG,TAG + playerName);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    private String getGamerTag(String userTag) {
-        if(userTag.equals("")) {
-            Log.i(TAG, "Choosing Randomly");
-            List<String> profileTag = new ArrayList<>();
-            profileTag.add("#LP8C008UJ");
-            profileTag.add("#PQJQYC9CQ");
-            profileTag.add("#2JQ299028");
-            Random getRand = new Random();
-            return profileTag.get(getRand.nextInt(profileTag.size()));
-        }
-        else{
-            return userTag;
         }
     }
 
