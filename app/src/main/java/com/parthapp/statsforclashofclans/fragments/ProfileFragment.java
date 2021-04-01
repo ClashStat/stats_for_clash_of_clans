@@ -79,16 +79,37 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        /*
+        Fetching the api response as a string to profile fragment
+        */
+
         Bundle bundle = this.getArguments();
-        String userTag = bundle.getString("resData");
+         String userTag = "";
+        if (bundle != null) {
+            userTag = bundle.getString("resData");
+        }
+
+        /*
+        Converting string to a player class using gson by google.
+         */
         Player player = gson.fromJson(userTag, Player.class);
 
+        /*
+        Getting data from the player object and using what's needed
+         */
         String playerName = player.getName();
-        Log.i(TAG,TAG + playerName);
         String clanURL = player.getClan().getBadgeUrl().getMedium();
-        Log.i(TAG, TAG+": "+ clanURL);
         String leagueURL =  player.getLeague().getIconUrls().getMedium();
+
+        /*
+        Logging to make sure variables print whats intended
+         */
+        Log.i(TAG,TAG + playerName);
         Log.i(TAG, TAG + ": " + leagueURL);
+        Log.i(TAG, TAG+": "+ clanURL);
+
+
 
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
