@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -60,16 +61,20 @@ public class Achievements_Adapter extends RecyclerView.Adapter<Achievements_Adap
 
     //Define a viewholder
     public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView achievement_head;
         TextView achievement_body;
+        TextView tvScore;
+        RatingBar ratingBar;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            achievement_head = itemView.findViewById(R.id.achievement_head);
             achievement_body = itemView.findViewById(R.id.achievement_body);
+            tvScore = itemView.findViewById(R.id.tvScore);
+            ratingBar = itemView.findViewById(R.id.ratingBar);
         }
 
         public void bind(Achievement ach) {
             achievement_body.setText(ach.getName());
+            tvScore.setText(ach.getValue()+"/"+ach.getTarget());
+            ratingBar.setRating(ach.getStars());
         }
     }
 }
