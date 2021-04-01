@@ -89,7 +89,6 @@ public class ProfileFragment extends Fragment {
         action_level = view.findViewById(R.id.action_level);
         action_clan = view.findViewById(R.id.action_clan);
         action_clan_badge = view.findViewById(R.id.action_clan_badge);
-        action_clan = view.findViewById(R.id.action_clan);
 
         /*
         Converting string to a player class using gson by google.
@@ -100,8 +99,8 @@ public class ProfileFragment extends Fragment {
          */
         String playerName = player.getName();
         String playerClan = player.getClan().getName();
-        String clanURL = player.getClan().getBadgeUrl().getMedium();
-        String leagueURL = player.getLeague().getIconUrls().getMedium();
+        String clanIcon = player.getClan().getBadgeUrl().getMedium();
+        String leagueIcon = player.getLeague().getIconUrls().getMedium();
         Integer playerLevel = player.getExpLevel();
 
 
@@ -115,7 +114,7 @@ public class ProfileFragment extends Fragment {
         Logging to make sure variables print whats intended
          */
         Log.i(TAG, TAG + playerName);
-        Log.i(TAG, TAG + ": " + leagueURL);
-        Log.i(TAG, TAG + ": " + clanURL);
+        Log.i(TAG, TAG + ": " + leagueIcon);
+        Log.i(TAG, TAG + ": " + clanIcon);
     }
 }
