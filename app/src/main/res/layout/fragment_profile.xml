@@ -87,7 +87,7 @@
         android:id="@+id/clan"
         android:layout_width="242dp"
         android:layout_height="63dp"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/achievement_head"
         android:layout_alignParentStart="true"
         android:layout_marginStart="166dp"
         android:layout_marginTop="84dp"
@@ -111,7 +111,7 @@
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/profile"
+        android:id="@+id/achievement_head"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_alignParentStart="true"
@@ -132,7 +132,7 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="78dp"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/achievement_head"
         android:layout_alignParentStart="true"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="4dp"
@@ -145,7 +145,7 @@
         android:id="@+id/level"
         android:layout_width="131dp"
         android:layout_height="76dp"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/achievement_head"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="3dp"
