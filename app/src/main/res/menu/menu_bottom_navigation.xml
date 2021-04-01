@@ -17,8 +17,4 @@
         android:icon="@android:drawable/btn_star_big_on"
         android:title="Achievements"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_logout"
-        android:title="Logout"
-        app:showAsAction="always" />
 </menu>

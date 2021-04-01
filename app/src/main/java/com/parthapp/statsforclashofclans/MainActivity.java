@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSearch;
     private EditText userTag;
     private String userTagString = "";
+    private static boolean LogInStatus;
     public static final String TAG = "Main Activity";
     private static int buttonCounter = 0;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     public void openFragmentActivity(){
         Intent intent = new Intent(this, FragmentActivity.class);
         intent.putExtra("userTag",userTagString );
+        intent.putExtra("LoginStatus", LogInStatus);
         startActivity(intent);
         finish();
     }
@@ -56,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
             Log.i(TAG, String.valueOf(buttonCounter));
             Toast.makeText(this, "Empty, click once more to choose randomly", Toast.LENGTH_SHORT).show();
             return false;
-
         }
         else{
             if(userTagString.matches("^#[A-Z0-9]{9}$")){
                 Toast.makeText(this, "Matches", Toast.LENGTH_LONG).show();
+                LogInStatus = true;
                 return true;
             }
             else{
