@@ -82,8 +82,7 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
@@ -114,8 +113,9 @@ public class ProfileFragment extends Fragment {
         String playerName = player.getName();
         String playerClan = player.getClan().getName();
         String clanURL = player.getClan().getBadgeUrl().getMedium();
-        String leagueURL =  player.getLeague().getIconUrls().getMedium();
+        String leagueURL = player.getLeague().getIconUrls().getMedium();
         Integer playerLevel = player.getExpLevel();
+
 
         /*
         Assigning fields
@@ -126,8 +126,8 @@ public class ProfileFragment extends Fragment {
         /*
         Logging to make sure variables print whats intended
          */
-        Log.i(TAG,TAG + playerName);
+        Log.i(TAG, TAG + playerName);
         Log.i(TAG, TAG + ": " + leagueURL);
-        Log.i(TAG, TAG+": "+ clanURL);
+        Log.i(TAG, TAG + ": " + clanURL);
     }
 }

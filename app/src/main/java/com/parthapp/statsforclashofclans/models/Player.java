@@ -95,7 +95,8 @@ public class Player {
 
     @SerializedName("achievements")
     @Expose
-    private List<Achievement> achievements = null;
+    private List<Achievement> achievements;
+    //private List<Achievement> achievements = null;
 
     @SerializedName("versusBattleWinCount")
     @Expose
