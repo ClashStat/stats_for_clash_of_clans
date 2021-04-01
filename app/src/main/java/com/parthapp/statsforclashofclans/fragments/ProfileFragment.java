@@ -1,6 +1,5 @@
 package com.parthapp.statsforclashofclans.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,21 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.parthapp.statsforclashofclans.BuildConfig;
-import com.parthapp.statsforclashofclans.ClashAdapter;
 import com.parthapp.statsforclashofclans.R;
-import com.parthapp.statsforclashofclans.models.BadgeUrl;
-import com.parthapp.statsforclashofclans.models.Clan;
 import com.parthapp.statsforclashofclans.models.Player;
-import com.parthapp.statsforclashofclans.models.Troop;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
-
-import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,15 +24,15 @@ import okhttp3.Response;
  */
 public class ProfileFragment extends Fragment {
 
-    private TextView username;
-    private TextView level;
-    private TextView clan;
-    private TextView clan_rank;
-    private ImageView clan_badge_url;
-    private TextView trophies;
-    private TextView league_lvl;
-    private TextView trophies_builder;
-    private TextView versus_battles;
+    private TextView action_username;
+    private TextView action_level;
+    private TextView action_clan;
+    private TextView action_clan_rank;
+    private ImageView action_clan_badge;
+    private TextView action_trophies;
+    private TextView action_league_lvl;
+    private TextView action_trophies_builder;
+    private TextView action_versus_battles;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -99,9 +85,10 @@ public class ProfileFragment extends Fragment {
         /*
         Finding view by ID
          */
-        username = view.findViewById(R.id.username);
-        level = view.findViewById(R.id.level);
-        clan = view.findViewById(R.id.clan);
+        action_username = view.findViewById(R.id.action_username);
+        action_level = view.findViewById(R.id.action_level);
+        action_clan = view.findViewById(R.id.action_clan);
+        action_clan_badge = view.findViewById(R.id.action_clan_badge);
 
         /*
         Converting string to a player class using gson by google.
@@ -112,22 +99,22 @@ public class ProfileFragment extends Fragment {
          */
         String playerName = player.getName();
         String playerClan = player.getClan().getName();
-        String clanURL = player.getClan().getBadgeUrl().getMedium();
-        String leagueURL = player.getLeague().getIconUrls().getMedium();
+        String clanIcon = player.getClan().getBadgeUrl().getMedium();
+        String leagueIcon = player.getLeague().getIconUrls().getMedium();
         Integer playerLevel = player.getExpLevel();
 
 
         /*
         Assigning fields
          */
-        username.setText(playerName);
-        level.setText(String.valueOf(playerLevel));
-        clan.setText(playerClan);
+        action_username.setText(playerName);
+        action_level.setText(String.valueOf(playerLevel));
+        action_clan.setText(playerClan);
         /*
         Logging to make sure variables print whats intended
          */
         Log.i(TAG, TAG + playerName);
-        Log.i(TAG, TAG + ": " + leagueURL);
-        Log.i(TAG, TAG + ": " + clanURL);
+        Log.i(TAG, TAG + ": " + leagueIcon);
+        Log.i(TAG, TAG + ": " + clanIcon);
     }
 }
