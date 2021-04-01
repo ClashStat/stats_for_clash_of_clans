@@ -93,6 +93,12 @@ public class ProfileFragment extends Fragment {
         action_clan = view.findViewById(R.id.action_clan);
         action_clan_badge = view.findViewById(R.id.action_clan_badge);
         action_player_league = view.findViewById(R.id.action_player_league);
+        action_trophies = view.findViewById(R.id.action_trophies);
+        action_league_lvl = view.findViewById(R.id.action_league_lvl);
+        action_thlevel = view.findViewById(R.id.action_thlevel);
+        action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
+        action_versus_battles = view.findViewById(R.id.action_versus_battles);
+        action_bblevel = view.findViewById(R.id.action_bblevel);
 
         /*
         Converting string to a player class using gson by google.
@@ -106,6 +112,12 @@ public class ProfileFragment extends Fragment {
         String clanIcon = player.getClan().getBadgeUrl().getMedium();
         String leagueIcon = player.getLeague().getIconUrls().getMedium();
         Integer playerLevel = player.getExpLevel();
+        Integer playerTrophies = player.getTrophies();
+        String playerLeagueLevel = player.getLeague().getName();
+        Integer playerTownhallLevel = player.getTownHallLevel();
+        Integer playerBuilderHallTrophies = player.getBuilderBaseTrophies();
+        Integer playerBuilderHallLevel = player.getBuilderHallLevel();
+        Integer playerBuilderBattleWon = player.getBuilderBaseWinCount();
 
         /*
         Assigning fields
@@ -115,6 +127,12 @@ public class ProfileFragment extends Fragment {
         action_clan.setText(playerClan);
         Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
         Picasso.with(getContext()).load(leagueIcon).into(action_player_league);
+        action_trophies.setText(String.valueOf(playerTrophies));
+        action_league_lvl.setText(playerLeagueLevel);
+        action_thlevel.setText(String.valueOf(playerTownhallLevel));
+        action_trophies_builder.setText(String.valueOf(playerBuilderHallTrophies));
+        action_versus_battles.setText(String.valueOf(playerBuilderHallLevel));
+        action_bblevel.setText(String.valueOf(playerBuilderBattleWon));
 
         /*
         Logging to make sure variables print whats intended
