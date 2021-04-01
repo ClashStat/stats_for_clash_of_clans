@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.R;
 import com.parthapp.statsforclashofclans.models.Player;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -105,13 +106,14 @@ public class ProfileFragment extends Fragment {
         String leagueIcon = player.getLeague().getIconUrls().getMedium();
         Integer playerLevel = player.getExpLevel();
 
-
         /*
         Assigning fields
          */
         action_username.setText(playerName);
         action_level.setText(String.valueOf(playerLevel));
         action_clan.setText(playerClan);
+        Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
+
         /*
         Logging to make sure variables print whats intended
          */
