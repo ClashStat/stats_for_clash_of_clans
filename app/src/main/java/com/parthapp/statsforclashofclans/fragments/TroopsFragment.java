@@ -2,6 +2,8 @@ package com.parthapp.statsforclashofclans.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -53,11 +55,14 @@ public class TroopsFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         Bundle bundle = this.getArguments();
-        String userTag = bundle.getString("resData");
-        Player player = gson.fromJson(userTag, Player.class);
+        String resData = "";
+        if(bundle != null) {
+             resData = bundle.getString("resData");
+        }
+        Player player = gson.fromJson(resData, Player.class);
         String playerName = player.getName();
         Log.i(TAG, "Troops!!!!!!!!!!!!!" + playerName);
         if (getArguments() != null) {

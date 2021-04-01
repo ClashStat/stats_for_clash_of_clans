@@ -58,7 +58,7 @@ public class FragmentActivity extends AppCompatActivity {
         try {
             resData = clash.makeThreadAPICall(getGamerTag(userTag), "players/");
             try {
-                bundle.putString("resData", resData.body().string());
+                bundle.putString("resData", Objects.requireNonNull(resData.body()).string());
             } catch (IOException e) {
                 e.printStackTrace();
             }
