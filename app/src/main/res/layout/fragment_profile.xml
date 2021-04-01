@@ -187,7 +187,7 @@
         android:textColor="@color/white"/>
 
     <TextView
-        android:id="@+id/action_bblevel"
+        android:id="@+id/action_bhlevel"
         android:layout_width="130dp"
         android:layout_height="75dp"
         android:layout_alignParentTop="true"
