@@ -38,13 +38,15 @@ import okhttp3.Response;
  */
 public class ProfileFragment extends Fragment {
 
-    private TextView profile;
     private TextView username;
     private TextView level;
     private TextView clan;
+    private TextView clan_rank;
     private ImageView clan_badge_url;
-    private TextView home_village;
-    private TextView builder_base;
+    private TextView trophies;
+    private TextView league_lvl;
+    private TextView trophies_builder;
+    private TextView versus_battles;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
