@@ -98,7 +98,7 @@ public class ProfileFragment extends Fragment {
         action_thlevel = view.findViewById(R.id.action_thlevel);
         action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
         action_versus_battles = view.findViewById(R.id.action_versus_battles);
-        action_bblevel = view.findViewById(R.id.action_bblevel);
+        action_bblevel = view.findViewById(R.id.action_bhlevel);
 
         /*
         Converting string to a player class using gson by google.
