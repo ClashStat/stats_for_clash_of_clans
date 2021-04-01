@@ -25,18 +25,6 @@ import com.squareup.picasso.Picasso;
  */
 public class ProfileFragment extends Fragment {
 
-    private TextView action_username;
-    private TextView action_level;
-    private TextView action_clan;
-    private ImageView action_clan_badge;
-    private TextView action_trophies;
-    private TextView action_league_lvl;
-    private TextView action_trophies_builder;
-    private TextView action_versus_battles;
-    private TextView action_thlevel;
-    private TextView action_bhlevel;
-    private ImageView action_player_league;
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -88,17 +76,17 @@ public class ProfileFragment extends Fragment {
         /*
         Finding view by ID
          */
-        action_username = view.findViewById(R.id.action_username);
-        action_level = view.findViewById(R.id.action_level);
-        action_clan = view.findViewById(R.id.action_clan);
-        action_clan_badge = view.findViewById(R.id.action_clan_badge);
-        action_player_league = view.findViewById(R.id.action_player_league);
-        action_trophies = view.findViewById(R.id.action_trophies);
-        action_league_lvl = view.findViewById(R.id.action_league_lvl);
-        action_thlevel = view.findViewById(R.id.action_thlevel);
-        action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
-        action_versus_battles = view.findViewById(R.id.action_versus_battles);
-        action_bhlevel = view.findViewById(R.id.action_bhlevel);
+        TextView action_username = view.findViewById(R.id.action_username);
+        TextView action_level = view.findViewById(R.id.action_level);
+        TextView action_clan = view.findViewById(R.id.action_clan);
+        ImageView action_clan_badge = view.findViewById(R.id.action_clan_badge);
+        ImageView action_player_league = view.findViewById(R.id.action_player_league);
+        TextView action_trophies = view.findViewById(R.id.action_trophies);
+        TextView action_league_lvl = view.findViewById(R.id.action_league_lvl);
+        TextView action_thlevel = view.findViewById(R.id.action_thlevel);
+        TextView action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
+        TextView action_versus_battles = view.findViewById(R.id.action_versus_battles);
+        TextView action_bhlevel = view.findViewById(R.id.action_bhlevel);
 
         /*
         Converting string to a player class using gson by google.
