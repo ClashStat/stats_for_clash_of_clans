@@ -38,15 +38,15 @@ import okhttp3.Response;
  */
 public class ProfileFragment extends Fragment {
 
-    private TextView username;
-    private TextView level;
-    private TextView clan;
-    private TextView clan_rank;
-    private ImageView clan_badge_url;
-    private TextView trophies;
-    private TextView league_lvl;
-    private TextView trophies_builder;
-    private TextView versus_battles;
+    private TextView action_username;
+    private TextView action_level;
+    private TextView action_clan;
+    private TextView action_clan_rank;
+    private ImageView action_clan_badge_url;
+    private TextView action_trophies;
+    private TextView action_league_lvl;
+    private TextView action_trophies_builder;
+    private TextView action_versus_battles;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -100,9 +100,9 @@ public class ProfileFragment extends Fragment {
         /*
         Finding view by ID
          */
-        username = view.findViewById(R.id.username);
-        level = view.findViewById(R.id.level);
-        clan = view.findViewById(R.id.clan);
+        action_username = view.findViewById(R.id.username);
+        action_username = view.findViewById(R.id.level);
+        action_clan = view.findViewById(R.id.clan);
 
         /*
         Converting string to a player class using gson by google.
