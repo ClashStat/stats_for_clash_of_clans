@@ -85,17 +85,14 @@ public class ProfileFragment extends Fragment {
         /*
         Finding view by ID
          */
-<<<<<<< HEAD
-        action_username = view.findViewById(R.id.username);
-        action_level = view.findViewById(R.id.level);
-        action_clan = view.findViewById(R.id.clan);
-        action_clan_badge = view.findViewById(R.id.clan_badge_url);
-=======
+        action_username = view.findViewById(R.id.action_username);
+        action_level = view.findViewById(R.id.action_level);
+        action_clan = view.findViewById(R.id.action_clan);
+        action_clan_badge = view.findViewById(R.id.action_clan_badge);
         action_username = view.findViewById(R.id.action_username);
         action_username = view.findViewById(R.id.action_level);
         action_clan = view.findViewById(R.id.action_clan);
 
->>>>>>> abb2a633e8f4f7f1fa7db8d72233dfe3d6b11d37
         /*
         Converting string to a player class using gson by google.
          */
