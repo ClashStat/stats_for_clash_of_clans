@@ -34,7 +34,7 @@ public class ProfileFragment extends Fragment {
     private TextView action_trophies_builder;
     private TextView action_versus_battles;
     private TextView action_thlevel;
-    private TextView action_bblevel;
+    private TextView action_bhlevel;
     private ImageView action_player_league;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -98,7 +98,7 @@ public class ProfileFragment extends Fragment {
         action_thlevel = view.findViewById(R.id.action_thlevel);
         action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
         action_versus_battles = view.findViewById(R.id.action_versus_battles);
-        action_bblevel = view.findViewById(R.id.action_bblevel);
+        action_bhlevel = view.findViewById(R.id.action_bblevel);
 
         /*
         Converting string to a player class using gson by google.
@@ -122,17 +122,17 @@ public class ProfileFragment extends Fragment {
         /*
         Assigning fields
          */
-        action_username.setText(playerName);
-        action_level.setText("Level: " + String.valueOf(playerLevel));
-        action_clan.setText(playerClan);
-        Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
         Picasso.with(getContext()).load(leagueIcon).into(action_player_league);
-        action_trophies.setText(String.valueOf(playerTrophies));
+        action_username.setText(playerName);
+        action_level.setText(String.format("Level: %s", String.valueOf(playerLevel)));
+        Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
+        action_clan.setText(playerClan);
+        action_trophies.setText(String.format("Trophies: %s", String.valueOf(playerTrophies)));
         action_league_lvl.setText(playerLeagueLevel);
-        action_thlevel.setText(String.valueOf(playerTownhallLevel));
-        action_trophies_builder.setText(String.valueOf(playerBuilderHallTrophies));
-        action_versus_battles.setText(String.valueOf(playerBuilderHallLevel));
-        action_bblevel.setText(String.valueOf(playerBuilderBattleWon));
+        action_thlevel.setText(String.format("Townhall Level: %s",String.valueOf(playerTownhallLevel)));
+        action_trophies_builder.setText(String.format("Trophies: %s",String.valueOf(playerBuilderHallTrophies)));
+        action_versus_battles.setText(String.format("Battle Won: %s", String.valueOf(playerBuilderBattleWon)));
+        action_bhlevel.setText(String.format("Builder Hall Level: %s", String.valueOf(playerBuilderHallLevel)));
 
         /*
         Logging to make sure variables print whats intended
