@@ -84,7 +84,7 @@ public class ProfileFragment extends Fragment {
 
         /*
         Finding view by ID
-         */
+        */
         action_username = view.findViewById(R.id.action_username);
         action_level = view.findViewById(R.id.action_level);
         action_clan = view.findViewById(R.id.action_clan);
