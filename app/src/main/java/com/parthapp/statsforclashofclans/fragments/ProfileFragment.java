@@ -33,6 +33,8 @@ public class ProfileFragment extends Fragment {
     private TextView action_league_lvl;
     private TextView action_trophies_builder;
     private TextView action_versus_battles;
+    private TextView action_thlevel;
+    private TextView action_bblevel;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

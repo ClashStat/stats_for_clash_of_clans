@@ -176,4 +176,30 @@
         android:layout_marginTop="1dp"
         android:src="@mipmap/ic_clan_foreground" />
 
+    <TextView
+        android:id="@+id/action_thlevel"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="6dp"
+        android:text="Town Hall Level"
+        android:background="@color/black"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/action_bblevel"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="461dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/black"
+        android:text="Builder Base Level"
+        android:textColor="@color/white" />
+
 </RelativeLayout>
