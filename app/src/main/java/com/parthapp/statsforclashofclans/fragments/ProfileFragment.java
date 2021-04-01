@@ -92,6 +92,7 @@ public class ProfileFragment extends Fragment {
         action_level = view.findViewById(R.id.action_level);
         action_clan = view.findViewById(R.id.action_clan);
         action_clan_badge = view.findViewById(R.id.action_clan_badge);
+        action_player_league = view.findViewById(R.id.action_player_league);
 
         /*
         Converting string to a player class using gson by google.
@@ -113,6 +114,7 @@ public class ProfileFragment extends Fragment {
         action_level.setText(String.valueOf(playerLevel));
         action_clan.setText(playerClan);
         Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
+        Picasso.with(getContext()).load(leagueIcon).into(action_player_league);
 
         /*
         Logging to make sure variables print whats intended
