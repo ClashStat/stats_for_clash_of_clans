@@ -123,7 +123,7 @@ public class ProfileFragment extends Fragment {
         Assigning fields
          */
         action_username.setText(playerName);
-        action_level.setText(String.valueOf(playerLevel));
+        action_level.setText("Level: " + String.valueOf(playerLevel));
         action_clan.setText(playerClan);
         Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
         Picasso.with(getContext()).load(leagueIcon).into(action_player_league);
