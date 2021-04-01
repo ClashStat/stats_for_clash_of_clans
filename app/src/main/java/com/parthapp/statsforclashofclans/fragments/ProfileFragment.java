@@ -27,7 +27,6 @@ public class ProfileFragment extends Fragment {
     private TextView action_username;
     private TextView action_level;
     private TextView action_clan;
-    private TextView action_clan_rank;
     private ImageView action_clan_badge;
     private TextView action_trophies;
     private TextView action_league_lvl;

@@ -50,20 +50,6 @@
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/action_clan_rank"
-        android:layout_width="wrap_content"
-        android:layout_height="63dp"
-        android:layout_below="@+id/action_clan"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="3dp"
-        android:layout_toStartOf="@+id/action_level"
-        android:text="CLAN RANK"
-        android:textColor="#000000" />
-
-    <TextView
         android:id="@+id/action_trophies"
         android:layout_width="279dp"
         android:layout_height="50dp"
