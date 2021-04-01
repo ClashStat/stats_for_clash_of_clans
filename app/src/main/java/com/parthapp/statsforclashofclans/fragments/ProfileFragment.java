@@ -1,7 +1,10 @@
 package com.parthapp.statsforclashofclans.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -77,24 +80,25 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
 
-        /*
-        Fetching the api response as a string to profile fragment
-        */
-
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Log.i(TAG, "HELLO HERE");
         Bundle bundle = this.getArguments();
-         String userTag = "";
+        String userTag = "";
         if (bundle != null) {
             userTag = bundle.getString("resData");
         }
-
         /*
         Converting string to a player class using gson by google.
          */
         Player player = gson.fromJson(userTag, Player.class);
-
         /*
         Getting data from the player object and using what's needed
          */
@@ -103,24 +107,14 @@ public class ProfileFragment extends Fragment {
         String leagueURL =  player.getLeague().getIconUrls().getMedium();
 
         /*
+        Assigning fields
+         */
+
+        /*
         Logging to make sure variables print whats intended
          */
         Log.i(TAG,TAG + playerName);
         Log.i(TAG, TAG + ": " + leagueURL);
         Log.i(TAG, TAG+": "+ clanURL);
-
-
-
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 }
