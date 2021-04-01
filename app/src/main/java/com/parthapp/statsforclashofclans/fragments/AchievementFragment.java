@@ -3,6 +3,7 @@ package com.parthapp.statsforclashofclans.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -31,6 +33,14 @@ import java.util.List;
  */
 public class AchievementFragment extends Fragment {
 
+    public class TimelineActivity extends AppCompatActivity {
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_timeline);
+        }
+    }
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
@@ -45,7 +55,6 @@ public class AchievementFragment extends Fragment {
     RecyclerView rvAchievements;
     Achievements_Adapter adapter;
     List <Achievement> ach;
-
 
     public AchievementFragment() {
         // Required empty public constructor
@@ -116,88 +125,3 @@ public class AchievementFragment extends Fragment {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-//
-//
-//public class AchievementFragment extends Fragment {
-//
-//    // TODO: Rename parameter arguments, choose names that match
-//    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-//    private TextView achievement_head;
-//    private ListView achievement_body;
-//    private static final String ARG_PARAM1 = "param1";
-//    private static final String ARG_PARAM2 = "param2";
-//    public static final String TAG = "Achievement";
-//    private final Gson gson = new Gson();
-//    // TODO: Rename and change types of parameters
-//    private String mParam1;
-//    private String mParam2;
-//
-//    public AchievementFragment() {
-//        // Required empty public constructor
-//    }
-//
-//    /**
-//     * Use this factory method to create a new instance of
-//     * this fragment using the provided parameters.
-//     *
-//     * @param param1 Parameter 1.
-//     * @param param2 Parameter 2.
-//     * @return A new instance of fragment AchievementFragment.
-//     */
-//    // TODO: Rename and change types and number of parameters
-//    public static AchievementFragment newInstance(String param1, String param2) {
-//        AchievementFragment fragment = new AchievementFragment();
-//        Bundle args = new Bundle();
-//        args.putString(ARG_PARAM1, param1);
-//        args.putString(ARG_PARAM2, param2);
-//        fragment.setArguments(args);
-//        return fragment;
-//    }
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-//        }
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_achievement, container, false);
-//    }
-//
-//    public void onViewCreated(View view, Bundle savedInstanceState){
-//        super.onViewCreated(view, savedInstanceState);
-//        Bundle bundle = this.getArguments();
-//        String userTag = bundle.getString("resData");
-//        Player player = gson.fromJson(userTag, Player.class);
-//        String playerName = player.getName();
-//
-//        /*
-//        Finding view by ID
-//        */
-//        achievement_head = view.findViewById(R.id.achievement_head);
-//        achievement_body = view.findViewById(R.id.achievement_body);
-//
-//        Log.i(TAG, "Achievement!!!!!!!!!!!!!" + playerName);
-//        List<Achievement> achievements = player.getAchievements();
-//        for(Achievement a: achievements){
-//            Log.i(TAG, a.getName());
-//        }
-//    }
-//}
