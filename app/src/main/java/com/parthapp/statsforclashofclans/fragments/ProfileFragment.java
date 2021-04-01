@@ -42,7 +42,7 @@ public class ProfileFragment extends Fragment {
     private TextView action_level;
     private TextView action_clan;
     private TextView action_clan_rank;
-    private ImageView action_clan_badge_url;
+    private ImageView action_clan_badge;
     private TextView action_trophies;
     private TextView action_league_lvl;
     private TextView action_trophies_builder;
@@ -100,9 +100,9 @@ public class ProfileFragment extends Fragment {
         Finding view by ID
          */
         action_username = view.findViewById(R.id.username);
-        action_username = view.findViewById(R.id.level);
+        action_level = view.findViewById(R.id.level);
         action_clan = view.findViewById(R.id.clan);
-
+        action_clan_badge = view.findViewById(R.id.clan_badge_url);
         /*
         Converting string to a player class using gson by google.
          */
