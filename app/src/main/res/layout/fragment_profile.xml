@@ -20,6 +20,7 @@
         android:layout_toStartOf="@+id/action_level"
         android:fontFamily="@font/rellaile"
         android:text="Home Village"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="35sp" />
 
@@ -29,21 +30,21 @@
         android:layout_height="129dp"
         android:layout_below="@+id/profile"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="-131dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="36dp"
         android:layout_toStartOf="@+id/action_level"
         android:fontFamily="@font/rellaile"
         android:gravity="center"
         android:text="CLAN"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/action_trophies"
         android:layout_width="279dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/action_clan"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -64,7 +65,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="337dp"
         android:layout_marginEnd="3dp"
         android:background="@color/black"
         android:fontFamily="@font/wellflett"
@@ -76,7 +77,7 @@
     <TextView
         android:id="@+id/action_league_lvl"
         android:layout_width="277dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/action_trophies"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -102,13 +103,14 @@
         android:layout_toStartOf="@+id/action_level"
         android:fontFamily="@font/rellaile"
         android:text="Builder Base"
+        android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="36sp" />
 
     <TextView
         android:id="@+id/action_versus_battles"
         android:layout_width="279dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/action_trophies_builder"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -125,7 +127,7 @@
     <TextView
         android:id="@+id/action_trophies_builder"
         android:layout_width="279dp"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/builder_base"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
@@ -163,16 +165,16 @@
         android:layout_height="80dp"
         android:layout_below="@+id/profile"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="-3dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="105dp"
         android:layout_toStartOf="@+id/action_level"
         android:fontFamily="@font/rellaile"
         android:gravity="center"
         android:text="USERNAME"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="36sp" />
 
     <TextView
         android:id="@+id/action_level"
@@ -195,8 +197,10 @@
         android:layout_height="118dp"
         android:layout_alignTop="@+id/action_clan"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="2dp"
         android:src="@mipmap/ic_clan_foreground" />
 
     <TextView
@@ -206,8 +210,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="461dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginTop="486dp"
+        android:layout_marginEnd="2dp"
         android:background="@color/black"
         android:fontFamily="@font/wellflett"
         android:gravity="center"
@@ -221,8 +225,8 @@
         android:layout_height="81dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="71dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="68dp"
         android:src="@mipmap/ic_profile2_foreground" />
 
     <View
@@ -266,9 +270,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="437dp"
-        android:layout_marginEnd="-1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="418dp"
+        android:layout_marginEnd="-3dp"
         android:background="@color/black" />
 
 </RelativeLayout>
