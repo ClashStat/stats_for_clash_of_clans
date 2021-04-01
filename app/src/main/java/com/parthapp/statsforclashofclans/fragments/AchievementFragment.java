@@ -58,19 +58,6 @@ public class AchievementFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = this.getArguments();
-        String userTag = bundle.getString("resData");
-        Player player = gson.fromJson(userTag, Player.class);
-        String playerName = player.getName();
-//        List<Achievement> achievementName = player.getAchievements();
-//        for (int i=0; i<achievementName.size(); i++){
-//            //achievementName.get(i);
-//            Log.i(TAG, "Achievement Name: " + achievementName.get(i).getName());
-//            Log.i(TAG, "Achievement Stars: " + achievementName.get(i).getStars());
-//            Log.i(TAG, "Achievement Ratio: " + achievementName.get(i).getValue()+"/"+achievementName.get(i).getTarget());
-//        }
-//        Log.i(TAG, "Achievement!!!!!!!!!!!!!" + playerName);
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -82,5 +69,18 @@ public class AchievementFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_achievement, container, false);
+    }
+
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        Bundle bundle = this.getArguments();
+        String userTag = bundle.getString("resData");
+        Player player = gson.fromJson(userTag, Player.class);
+        String playerName = player.getName();
+
+        Log.i(TAG, "Achievement!!!!!!!!!!!!!" + playerName);
+        List<Achievement> achievements = player.getAchievements();
+        for(Achievement a: achievements){
+            Log.i(TAG, a.getName());
+        }
     }
 }
