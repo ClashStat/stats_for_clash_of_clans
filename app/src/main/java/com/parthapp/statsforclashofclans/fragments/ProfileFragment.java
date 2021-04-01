@@ -138,7 +138,5 @@ public class ProfileFragment extends Fragment {
         Logging to make sure variables print whats intended
          */
         Log.i(TAG, TAG + playerName);
-        Log.i(TAG, TAG + ": " + leagueIcon);
-        Log.i(TAG, TAG + ": " + clanIcon);
     }
 }
