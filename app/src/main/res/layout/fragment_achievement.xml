@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="50dp"
     tools:context=".fragments.AchievementFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,9 +10,13 @@
     <TextView
         android:id="@+id/achievement_body"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@+id/achievement_head"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="3dp"
-        android:text="TextView" />
+        android:fontFamily="@font/wellflett"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
 </RelativeLayout>
