@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         userTagString = userTag.getText().toString();
         if(userTagString.equals("")){
             buttonCounter++;
-            if(buttonCounter == 2) {
+            if(buttonCounter % 2 == 0) {
                 return true;
             }
             Log.i(TAG, String.valueOf(buttonCounter));

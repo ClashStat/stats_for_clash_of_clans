@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.R;
 import com.parthapp.statsforclashofclans.models.Player;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,16 +24,6 @@ import com.parthapp.statsforclashofclans.models.Player;
  * create an instance of this fragment.
  */
 public class ProfileFragment extends Fragment {
-
-    private TextView action_username;
-    private TextView action_level;
-    private TextView action_clan;
-    private TextView action_clan_rank;
-    private ImageView action_clan_badge;
-    private TextView action_trophies;
-    private TextView action_league_lvl;
-    private TextView action_trophies_builder;
-    private TextView action_versus_battles;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,11 +75,19 @@ public class ProfileFragment extends Fragment {
 
         /*
         Finding view by ID
+
         */
-        action_username = view.findViewById(R.id.action_username);
-        action_level = view.findViewById(R.id.action_level);
-        action_clan = view.findViewById(R.id.action_clan);
-        action_clan_badge = view.findViewById(R.id.action_clan_badge);
+        TextView action_username = view.findViewById(R.id.action_username);
+        TextView action_level = view.findViewById(R.id.action_level);
+        TextView action_clan = view.findViewById(R.id.action_clan);
+        ImageView action_clan_badge = view.findViewById(R.id.action_clan_badge);
+        ImageView action_player_league = view.findViewById(R.id.action_player_league);
+        TextView action_trophies = view.findViewById(R.id.action_trophies);
+        TextView action_league_lvl = view.findViewById(R.id.action_league_lvl);
+        TextView action_thlevel = view.findViewById(R.id.action_thlevel);
+        TextView action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
+        TextView action_versus_battles = view.findViewById(R.id.action_versus_battles);
+        TextView action_bhlevel = view.findViewById(R.id.action_bhlevel);
 
         /*
         Converting string to a player class using gson by google.
@@ -102,19 +101,31 @@ public class ProfileFragment extends Fragment {
         String clanIcon = player.getClan().getBadgeUrl().getMedium();
         String leagueIcon = player.getLeague().getIconUrls().getMedium();
         Integer playerLevel = player.getExpLevel();
-
+        Integer playerTrophies = player.getTrophies();
+        String playerLeagueLevel = player.getLeague().getName();
+        Integer playerTownhallLevel = player.getTownHallLevel();
+        Integer playerBuilderHallTrophies = player.getBuilderBaseTrophies();
+        Integer playerBuilderHallLevel = player.getBuilderHallLevel();
+        Integer playerBuilderBattleWon = player.getBuilderBaseWinCount();
 
         /*
         Assigning fields
          */
+        Picasso.with(getContext()).load(leagueIcon).into(action_player_league);
         action_username.setText(playerName);
-        action_level.setText(String.valueOf(playerLevel));
+        action_level.setText(String.format("Level: %s", String.valueOf(playerLevel)));
+        Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
         action_clan.setText(playerClan);
+        action_trophies.setText(String.format("Trophies: %s", String.valueOf(playerTrophies)));
+        action_league_lvl.setText(playerLeagueLevel);
+        action_thlevel.setText(String.format("Townhall Level: %s",String.valueOf(playerTownhallLevel)));
+        action_trophies_builder.setText(String.format("Trophies: %s",String.valueOf(playerBuilderHallTrophies)));
+        action_versus_battles.setText(String.format("Battle Won: %s", String.valueOf(playerBuilderBattleWon)));
+        action_bhlevel.setText(String.format("Builder Hall Level: %s", String.valueOf(playerBuilderHallLevel)));
+
         /*
         Logging to make sure variables print whats intended
          */
         Log.i(TAG, TAG + playerName);
-        Log.i(TAG, TAG + ": " + leagueIcon);
-        Log.i(TAG, TAG + ": " + clanIcon);
     }
 }

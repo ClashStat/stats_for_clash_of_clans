@@ -9,23 +9,9 @@
     tools:context=".fragments.ProfileFragment">
 
     <TextView
-        android:id="@+id/builder_base"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_below="@+id/action_league_lvl"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="-133dp"
-        android:layout_toStartOf="@+id/action_level"
-        android:text="Builder Base"
-        android:textColor="#000000"
-        android:textSize="27dp" />
-
-    <TextView
         android:id="@+id/home_village"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="35dp"
         android:layout_below="@+id/action_clan_badge"
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
@@ -39,29 +25,19 @@
     <TextView
         android:id="@+id/action_clan"
         android:layout_width="242dp"
-        android:layout_height="63dp"
-        android:layout_below="@+id/achievement_head"
+        android:layout_height="129dp"
+        android:layout_below="@+id/profile"
         android:layout_alignParentStart="true"
         android:layout_marginStart="166dp"
         android:layout_marginTop="84dp"
         android:layout_marginEnd="-131dp"
         android:layout_toStartOf="@+id/action_level"
+        android:fontFamily="@font/rellaile"
+        android:gravity="center"
         android:text="CLAN"
-        android:textColor="#000000" />
-
-    <TextView
-        android:id="@+id/action_clan_rank"
-        android:layout_width="wrap_content"
-        android:layout_height="63dp"
-        android:layout_below="@+id/action_clan"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="166dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginEnd="3dp"
-        android:layout_toStartOf="@+id/action_level"
-        android:text="CLAN RANK"
-        android:textColor="#000000" />
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/action_trophies"
@@ -72,26 +48,40 @@
         android:layout_alignParentEnd="true"
         android:layout_centerInParent="true"
         android:layout_marginStart="-3dp"
-        android:layout_marginTop="102dp"
+        android:layout_marginTop="37dp"
         android:layout_marginEnd="135dp"
         android:layout_toStartOf="@+id/action_level"
         android:text="Trophies"
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/action_trophies_builder"
-        android:layout_width="279dp"
+        android:id="@+id/action_league_lvl"
+        android:layout_width="277dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/builder_base"
+        android:layout_below="@+id/action_trophies"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="135dp"
         android:layout_toStartOf="@+id/action_level"
-        android:text="Trophies"
+        android:text="League Level"
         android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/builder_base"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/action_league_lvl"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="-133dp"
+        android:layout_toStartOf="@+id/action_level"
+        android:text="Builder Base"
+        android:textColor="#000000"
+        android:textSize="27dp" />
 
     <TextView
         android:id="@+id/action_versus_battles"
@@ -109,18 +99,18 @@
         android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/action_league_lvl"
-        android:layout_width="277dp"
+        android:id="@+id/action_trophies_builder"
+        android:layout_width="279dp"
         android:layout_height="50dp"
-        android:layout_below="@+id/action_trophies"
+        android:layout_below="@+id/builder_base"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="135dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="132dp"
         android:layout_toStartOf="@+id/action_level"
-        android:text="League Level"
+        android:text="Trophies"
         android:textColor="#000000" />
 
     <TextView
@@ -143,28 +133,35 @@
 
     <TextView
         android:id="@+id/action_username"
-        android:layout_width="wrap_content"
-        android:layout_height="78dp"
-        android:layout_below="@+id/achievement_head"
+        android:layout_width="173dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/profile"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="107dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="-3dp"
         android:layout_toStartOf="@+id/action_level"
+        android:fontFamily="@font/rellaile"
+        android:gravity="center"
         android:text="USERNAME"
-        android:textColor="#000000" />
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/action_level"
         android:layout_width="131dp"
         android:layout_height="76dp"
-        android:layout_below="@+id/achievement_head"
+        android:layout_below="@+id/profile"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="3dp"
         android:background="@color/black"
+        android:fontFamily="@font/wellflett"
+        android:gravity="center"
         android:text="LEVEL"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="24sp" />
 
     <ImageView
         android:id="@+id/action_clan_badge"
@@ -175,5 +172,41 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:src="@mipmap/ic_clan_foreground" />
+
+    <TextView
+        android:id="@+id/action_thlevel"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="6dp"
+        android:text="Town Hall Level"
+        android:background="@color/black"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/action_bhlevel"
+        android:layout_width="130dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="461dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/black"
+        android:text="Builder Base Level"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/action_player_league"
+        android:layout_width="wrap_content"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="65dp"
+        android:src="@mipmap/ic_profile2_foreground" />
 
 </RelativeLayout>
