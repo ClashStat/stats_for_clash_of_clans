@@ -11,7 +11,10 @@ import android.view.ViewGroup;
 
 import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.R;
+import com.parthapp.statsforclashofclans.models.Achievement;
 import com.parthapp.statsforclashofclans.models.Player;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,6 +63,10 @@ public class AchievementFragment extends Fragment {
         Player player = gson.fromJson(userTag, Player.class);
         String playerName = player.getName();
         Log.i(TAG, "Achivement!!!!!!!!!!!!!" + playerName);
+        List<Achievement> achievements = player.getAchievements();
+        for(Achievement a: achievements){
+            Log.i(TAG, a.getName());
+        }
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

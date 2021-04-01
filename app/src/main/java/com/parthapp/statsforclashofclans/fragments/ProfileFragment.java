@@ -1,7 +1,10 @@
 package com.parthapp.statsforclashofclans.fragments;
 
+import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -79,29 +82,52 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Bundle bundle = this.getArguments();
-        String userTag = bundle.getString("resData");
-        Player player = gson.fromJson(userTag, Player.class);
-
-        String playerName = player.getName();
-        Log.i(TAG,TAG + playerName);
-        String clanURL = player.getClan().getBadgeUrl().getMedium();
-        Log.i(TAG, TAG+": "+ clanURL);
-        String leagueURL =  player.getLeague().getIconUrls().getMedium();
-        Log.i(TAG, TAG + ": " + leagueURL);
-
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Bundle bundle = this.getArguments();
+        String userTag = "";
+        if (bundle != null) {
+            userTag = bundle.getString("resData");
+        }
+
+        /*
+        Finding view by ID
+         */
+        username = view.findViewById(R.id.username);
+        level = view.findViewById(R.id.level);
+        clan = view.findViewById(R.id.clan);
+
+        /*
+        Converting string to a player class using gson by google.
+         */
+        Player player = gson.fromJson(userTag, Player.class);
+        /*
+        Getting data from the player object and using what's needed
+         */
+        String playerName = player.getName();
+        String playerClan = player.getClan().getName();
+        String clanURL = player.getClan().getBadgeUrl().getMedium();
+        String leagueURL =  player.getLeague().getIconUrls().getMedium();
+        Integer playerLevel = player.getExpLevel();
+
+        /*
+        Assigning fields
+         */
+        username.setText(playerName);
+        level.setText(String.valueOf(playerLevel));
+        clan.setText(playerClan);
+        /*
+        Logging to make sure variables print whats intended
+         */
+        Log.i(TAG,TAG + playerName);
+        Log.i(TAG, TAG + ": " + leagueURL);
+        Log.i(TAG, TAG+": "+ clanURL);
     }
 }
