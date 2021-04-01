@@ -13,7 +13,8 @@
         android:theme="@style/Theme.StatsForClashOfClans">
         <activity android:name=".TimelineActivity"></activity>
         <activity android:name=".FragmentActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
