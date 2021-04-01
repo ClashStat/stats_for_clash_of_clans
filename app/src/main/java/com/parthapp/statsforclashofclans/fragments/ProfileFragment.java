@@ -120,9 +120,9 @@ public class ProfileFragment extends Fragment {
         /*
         Assigning fields
          */
-        username.setText(playerName);
-        level.setText(String.valueOf(playerLevel));
-        clan.setText(playerClan);
+        action_username.setText(playerName);
+        action_level.setText(String.valueOf(playerLevel));
+        action_clan.setText(playerClan);
         /*
         Logging to make sure variables print whats intended
          */
