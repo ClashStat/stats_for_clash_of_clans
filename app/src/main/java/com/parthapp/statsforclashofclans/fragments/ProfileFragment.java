@@ -1,6 +1,5 @@
 package com.parthapp.statsforclashofclans.fragments;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,21 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.parthapp.statsforclashofclans.BuildConfig;
-import com.parthapp.statsforclashofclans.ClashAdapter;
 import com.parthapp.statsforclashofclans.R;
-import com.parthapp.statsforclashofclans.models.BadgeUrl;
-import com.parthapp.statsforclashofclans.models.Clan;
 import com.parthapp.statsforclashofclans.models.Player;
-import com.parthapp.statsforclashofclans.models.Troop;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
-
-import okhttp3.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -99,9 +85,9 @@ public class ProfileFragment extends Fragment {
         /*
         Finding view by ID
          */
-        action_username = view.findViewById(R.id.username);
-        action_username = view.findViewById(R.id.level);
-        action_clan = view.findViewById(R.id.clan);
+        action_username = view.findViewById(R.id.action_username);
+        action_username = view.findViewById(R.id.action_level);
+        action_clan = view.findViewById(R.id.action_clan);
 
         /*
         Converting string to a player class using gson by google.
