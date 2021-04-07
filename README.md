@@ -13,11 +13,6 @@ Original App Design Project - README Template
 ### Description
 This Android App will utilize the public API documentations of Clash of Clans which is a mobile gaming app. The functionality of this app focuses on showing the user a comprehensive overview of all their current game statistics from Home-Village and Builder-Village.  
 
-
-### App Walkthough GIF
-
-<img src="/Walkthrough/Unit_8.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
 ### App Evaluation
 - **Category:** Mobile Game Status App
 - **Mobile:** This app is mainly for a Mobile phone since it will require the user to input the device IP address and the mobile game's unique ID. However this may be also remotely used as a web browser application
@@ -30,12 +25,13 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 
 ### 1. User Stories
 - [x] The user is able to sign-in using the #clashOfclansID
+- [x] Implement the profile fragment
+- [ ] Implement the troops fragment
+- [x] Implement the achievements fragment
 - [ ] User is able to log-out
 - [ ] The user can persistently stay logged-in unless they log-out manually
 - [x] There are distributed fragments that show user statistics
-- [ ] The user can scroll using the scroll bar to see the remaining stats
-- [ ] The fragment in which the user is currently, changes color
-
+- [x] The fragment in which the user is currently, changes color
 
 ### 2. Screen Archetypes
 * Login Screen
@@ -70,14 +66,30 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
+<img src="/Walkthrough/Unit_9.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema 
 [This section will be completed in Unit 9]
 
 ### Models
 #### Player
+|      Property     |    Type   |                 Description                |
+|-------------------|-----------|--------------------------------------------|
+|        Tag        |String     |      The user's gamer tag                  |
+|        Name       |String     |      The user's account name               |
+|      Trophies     |Integer    |      The user's total trophies             |
+|    townHallLevel  |Integer    |      The Home Village townhall level       |
+|  builderHallLevel |Integer    |      The Builder Village townhall level    |
+|       league      |File Object|      The warrior league the player is in   |
+|       clan        |File Object|      The clan's name                       |
+
 
 #### Achievement
+| Property  |  Type | Description  |
+|-----------|-------|--------------|
+|   |   |   |
+|   |   |   |
+|   |   |   |
 
 #### League
 
