@@ -83,6 +83,12 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 |       league      |File Object|      The warrior league the player is in   |
 |       clan        |File Object|      The clan's name                       |
 
+#### Troops
+| Property  |  Type | Description  |
+|-----------|-------|--------------|
+|   |   |   |
+|   |   |   |
+|   |   |   |
 
 #### Achievement
 | Property  |  Type | Description  |
@@ -91,11 +97,16 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 |   |   |   |
 |   |   |   |
 
-#### League
-
-#### Troop
-
 ### Networking
--[Add list of network requests by screen ]
--[Create basic snippets for each Parse network request]
--[OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of Network Requests by Screen
+- Home Screen
+    - (Update/PUT) Analyze gamer tag to allow login
+
+- Profile Screen
+    - (Read/GET) Get user trophies
+    - (Read/GET) Get user townhall level
+    - (Read/GET) Get user builderhall level
+    - (Read/GET) Get user league
+    - (Read/GET) Get user clan
+- Troops Screen
+- Achievements Screen 
