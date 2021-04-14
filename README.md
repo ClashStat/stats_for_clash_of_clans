@@ -29,12 +29,14 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 ## Product Spec
 
 ### 1. User Stories
-- [x] The user is able to sign-in using the #clashOfclansID
+- [x] The user is able to sign-in using the #clashOfclansID\
+- [x] The user is able to see Profile info for the account they logged in with
+- [x] The user is able to see the logo for the currentPlayerLeague and currentPlayerClan for visualization. 
 - [ ] User is able to log-out
 - [ ] The user can persistently stay logged-in unless they log-out manually
 - [x] There are distributed fragments that show user statistics
-- [ ] The user can scroll using the scroll bar to see the remaining stats
-- [ ] The fragment in which the user is currently, changes color
+- [ ] The user can scroll to visualize data in Achivement Fragment
+- [x] The fragment in which the user is currently, changes color
 
 
 ### 2. Screen Archetypes
@@ -59,7 +61,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 
 * Login screen -> input the unique game id
 * Profile page -> player's profile information 
-* Troops -> all the troops for war and their levels
+* Troops -> all the player troops and their levels including their heroes
 * Achievements -> all the user achievements in the game and success rate
 * Logout -> log out of the app and go back to the Login page
 
