@@ -26,7 +26,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 ### 1. User Stories
 - [x] The user is able to sign-in using the #clashOfclansID
 - [x] The user is able to see Profile info for the account they logged in with
-- [x] The user is able to see the logo for the currentPlayerLeague and currentPlayerClan for visualization. 
+- [x] The user is able to see the logo for the currentPlayerLeague and currentPlayerClan for visualization in Profile Fragment. 
 - [ ] User is able to log-out
 - [ ] The user can persistently stay logged-in unless they log-out manually
 - [x] There are distributed fragments that show user statistics
