@@ -13,11 +13,6 @@ Original App Design Project - README Template
 ### Description
 This Android App will utilize the public API documentations of Clash of Clans which is a mobile gaming app. The functionality of this app focuses on showing the user a comprehensive overview of all their current game statistics from Home-Village and Builder-Village.  
 
-
-### App Walkthough GIF
-
-<img src="/Walkthrough/Unit_8.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
 ### App Evaluation
 - **Category:** Mobile Game Status App
 - **Mobile:** This app is mainly for a Mobile phone since it will require the user to input the device IP address and the mobile game's unique ID. However this may be also remotely used as a web browser application
@@ -72,20 +67,47 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
+<img src="/Walkthrough/Unit_9.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema 
 [This section will be completed in Unit 9]
 
 ### Models
 #### Player
+|      Property     |    Type   |                 Description                |
+|-------------------|-----------|--------------------------------------------|
+|        Tag        |String     |      The user's gamer tag                  |
+|        Name       |String     |      The user's account name               |
+|      Trophies     |Integer    |      The user's total trophies             |
+|    townHallLevel  |Integer    |      The Home Village townhall level       |
+|  builderHallLevel |Integer    |      The Builder Village townhall level    |
+|       league      |File Object|      The warrior league the player is in   |
+|       clan        |File Object|      The clan's name                       |
+
+#### Troops
+| Property  |  Type | Description  |
+|-----------|-------|--------------|
+|   |   |   |
+|   |   |   |
+|   |   |   |
 
 #### Achievement
-
-#### League
-
-#### Troop
+| Property  |  Type | Description  |
+|-----------|-------|--------------|
+|   |   |   |
+|   |   |   |
+|   |   |   |
 
 ### Networking
--[Add list of network requests by screen ]
--[Create basic snippets for each Parse network request]
--[OPTIONAL: List endpoints if using existing API such as Yelp]
+#### List of Network Requests by Screen
+- Home Screen
+    - (Update/PUT) Analyze gamer tag to allow login
+
+- Profile Screen
+    - (Read/GET) Get user trophies
+    - (Read/GET) Get user townhall level
+    - (Read/GET) Get user builderhall level
+    - (Read/GET) Get user league
+    - (Read/GET) Get user clan
+- Troops Screen
+- Achievements Screen 
