@@ -30,7 +30,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 - [ ] User is able to log-out
 - [ ] The user can persistently stay logged-in unless they log-out manually
 - [x] There are distributed fragments that show user statistics
-- [ ] The user can scroll to visualize data in Achivement Fragment
+- [x] The user can scroll to visualize data in Achievement Fragment
 - [x] The fragment in which the user is currently, changes color
 
 
