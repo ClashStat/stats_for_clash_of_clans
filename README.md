@@ -67,7 +67,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
-<img src="/Walkthrough/Unit_10.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="/Walkthrough/Unit_11.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema 
 [This section will be completed in Unit 9]
