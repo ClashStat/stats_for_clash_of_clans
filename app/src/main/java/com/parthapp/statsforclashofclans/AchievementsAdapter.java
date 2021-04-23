@@ -15,12 +15,12 @@ import com.parthapp.statsforclashofclans.models.Achievement;
 
 import java.util.List;
 
-public class Achievements_Adapter extends RecyclerView.Adapter<Achievements_Adapter.ViewHolder>{
+public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapter.ViewHolder>{
     Context context;
         List <Achievement> achievements;
     public static final String TAG = "achievements_adapter";
 
-    public Achievements_Adapter(Context context, List<Achievement> achievements) {
+    public AchievementsAdapter(Context context, List<Achievement> achievements) {
         this.context = context;
         this.achievements = achievements;
         for(Achievement a: achievements){

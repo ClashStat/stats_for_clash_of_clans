@@ -14,6 +14,9 @@ import android.view.ViewGroup;
 import com.google.gson.Gson;
 import com.parthapp.statsforclashofclans.R;
 import com.parthapp.statsforclashofclans.models.Player;
+import com.parthapp.statsforclashofclans.models.Troop;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -62,9 +65,48 @@ public class TroopsFragment extends Fragment {
         if(bundle != null) {
              resData = bundle.getString("resData");
         }
+        /*
+            Getting the data from the json object and converting it to a Player Object
+         */
         Player player = gson.fromJson(resData, Player.class);
-        String playerName = player.getName();
-        Log.i(TAG, "Troops!!!!!!!!!!!!!" + playerName);
+
+        /*
+            @heroes: List of heroes and their levels
+            @spells: List of spells and their levels
+            @troops: List of troops and their levels
+         */
+        List<Troop> heroes = player.getHeroes();
+        List<Troop> spells = player.getSpells();
+        List<Troop> troops = player.getTroops();
+
+        /*
+            START OF DEBUG
+         */
+
+        for(Troop hero: heroes){
+            if(hero.getVillage().equals("builderBase")){
+                continue;
+            }
+            Log.i(TAG, hero.getName() + " " + hero.getLevel());
+        }
+        for(Troop spell: spells){
+            if(spell.getVillage().equals("builderBase")){
+                continue;
+            }
+            Log.i(TAG, spell.getName() + " " + spell.getLevel());
+        }
+        for(Troop troop: troops){
+            if(troop.getVillage().equals("builderBase")){
+                continue;
+            }
+            Log.i(TAG, troop.getName() + " " + troop.getLevel());
+        }
+
+        /*
+            END OF DEBUG
+         */
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
