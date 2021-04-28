@@ -29,6 +29,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 - [x] The user is able to see the logo for the currentPlayerLeague and currentPlayerClan for visualization in Profile Fragment. 
 - [ ] User is able to log-out
 - [ ] The user can persistently stay logged-in unless they log-out manually
+- [x] The user can view info about their heroes
 - [x] There are distributed fragments that show user statistics
 - [x] The user can scroll to visualize data in Achievement Fragment
 - [x] The fragment in which the user is currently, changes color
@@ -67,7 +68,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
-<img src="/Walkthrough/Unit_11.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="/Walkthrough/Unit_12.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema 
 [This section will be completed in Unit 9]
