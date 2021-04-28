@@ -28,7 +28,7 @@
         android:id="@+id/action_clan"
         android:layout_width="242dp"
         android:layout_height="129dp"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/troops"
         android:layout_alignParentStart="true"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="88dp"
@@ -142,7 +142,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/profile"
+        android:id="@+id/troops"
         android:layout_width="match_parent"
         android:layout_height="62dp"
         android:layout_alignParentStart="true"
@@ -163,7 +163,7 @@
         android:id="@+id/action_username"
         android:layout_width="173dp"
         android:layout_height="80dp"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/troops"
         android:layout_alignParentStart="true"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="7dp"
@@ -180,7 +180,7 @@
         android:id="@+id/action_level"
         android:layout_width="131dp"
         android:layout_height="80dp"
-        android:layout_below="@+id/profile"
+        android:layout_below="@+id/troops"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="3dp"
