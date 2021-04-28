@@ -12,24 +12,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.parthapp.statsforclashofclans.models.Achievement;
+import com.parthapp.statsforclashofclans.models.Troop;
 
 import java.util.List;
 
-public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapter.ViewHolder>{
+public class TroopsAdapter extends RecyclerView.Adapter<TroopsAdapter.ViewHolder>{
     Context context;
-    List <Achievement> achievements;
+    List<Troop> heroes;
     public static final String TAG = "achievements_adapter";
 
-    public AchievementsAdapter(Context context, List <Achievement> achievements) {
+    public TroopsAdapter(Context context, List<Troop> heroes) {
         this.context = context;
-        this.achievements = achievements;
+        this.heroes = heroes;
     }
 
     //for each row, inflate the layout
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.fragment_achievement, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_heroes, parent, false);
         return new ViewHolder(view);
     }
 
@@ -37,41 +38,38 @@ public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         //get the data at position
-        Achievement ach = achievements.get(position);
+        Troop h = heroes.get(position);
         //bind the tweet with the view holder
-        holder.bind(ach);
+        holder.bind(h);
     }
     public void clear(){
-        achievements.clear();
+        heroes.clear();
         notifyDataSetChanged();
     }
 
-    public void addAll(List<Achievement> a){
-        achievements.addAll(a);
+    public void addAll(List<Troop> h){
+        heroes.addAll(h);
         notifyDataSetChanged();
     }
     //pass in the context and list of achievements
     @Override
     public int getItemCount() {
-        return achievements.size();
+        return heroes.size();
     }
 
     //Define a viewholder
-    public class ViewHolder extends RecyclerView.ViewHolder{
-        TextView achievement_body;
-        TextView tvScore;
-        RatingBar ratingBar;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        TextView action_hero_name;
+        TextView action_hero_level;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            achievement_body = itemView.findViewById(R.id.achievement_body);
-            tvScore = itemView.findViewById(R.id.tvScore);
-            ratingBar = itemView.findViewById(R.id.ratingBar);
+            action_hero_name = itemView.findViewById(R.id.action_hero_name);
+            action_hero_level = itemView.findViewById(R.id.action_hero_level);
         }
 
-        public void bind(Achievement ach) {
-            achievement_body.setText(ach.getName());
-            tvScore.setText(ach.getValue()+"/"+ach.getTarget());
-            ratingBar.setRating(ach.getStars());
+        public void bind(Troop h) {
+            action_hero_name.setText(h.getName());
+            action_hero_level.setText(String.valueOf(h.getLevel()));
         }
     }
 }

@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/action_spellsname"
+        android:id="@+id/action_spells_name"
         android:layout_width="150dp"
         android:layout_height="25dp"
         android:layout_marginEnd="164dp"

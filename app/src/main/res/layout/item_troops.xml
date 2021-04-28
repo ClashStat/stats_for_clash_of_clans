@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/action_troopname"
+        android:id="@+id/action_troop_name"
         android:layout_width="150dp"
         android:layout_height="25dp"
         android:layout_alignParentStart="true"
