@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".fragments.TroopsFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSpells"
+        android:layout_width="wrap_content"
+        android:layout_height="222dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="56dp"
+        tools:layout_marginTop="285dp" />
+
     <TextView
         android:id="@+id/troops_Title"
         android:layout_width="match_parent"
@@ -70,10 +80,10 @@
         android:id="@+id/spells"
         android:layout_width="226dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/troops_Title"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="340dp"
+        android:layout_marginBottom="262dp"
         android:fontFamily="@font/wellflett"
         android:text="SPELLS"
         android:textAlignment="center"
@@ -96,18 +106,22 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHeroes"
-        android:layout_width="match_parent"
-        android:layout_height="499dp"
+        android:layout_width="wrap_content"
+        android:layout_height="141dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="111dp"
-        android:layout_marginBottom="121dp" />
+        android:layout_marginBottom="479dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="240dp"
-        android:layout_height="280dp"
+        android:id="@+id/rvTroops"
+        android:layout_width="410dp"
+        android:layout_height="145dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="1dp"
         tools:layout_marginTop="285dp" />
 
 

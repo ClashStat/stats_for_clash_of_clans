@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.gson.Gson;
-import com.parthapp.statsforclashofclans.AchievementsAdapter;
 import com.parthapp.statsforclashofclans.R;
+import com.parthapp.statsforclashofclans.HeroesAdapter;
+import com.parthapp.statsforclashofclans.SpellsAdapter;
 import com.parthapp.statsforclashofclans.TroopsAdapter;
 import com.parthapp.statsforclashofclans.models.Player;
 import com.parthapp.statsforclashofclans.models.Troop;
@@ -49,9 +49,26 @@ public class TroopsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    /*
+    Heroes
+    */
     RecyclerView rvHeroes;
-    TroopsAdapter adapter;
+    HeroesAdapter heroesAdapter;
     List<Troop> heroes;
+
+    /*
+    Spells
+     */
+    RecyclerView rvSpells;
+    SpellsAdapter spellsAdapter;
+    List<Troop> spells;
+
+    /*
+    Troops
+     */
+    RecyclerView rvTroops;
+    TroopsAdapter troopsAdapter;
+    List<Troop> troops;
 
     public TroopsFragment() {
         // Required empty public constructor
@@ -96,13 +113,39 @@ public class TroopsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Bundle bundle = this.getArguments();
 
-        //find the recyclerview
+        /*
+        Heroes
+        */
         rvHeroes = view.findViewById(R.id.rvHeroes);
         heroes  = new ArrayList<>();
-        adapter = new TroopsAdapter(getContext(),heroes);
-        LinearLayoutManager lm = new LinearLayoutManager(getContext());
-        rvHeroes.setLayoutManager(lm);
-        rvHeroes.setAdapter(adapter);
+        heroesAdapter = new HeroesAdapter(getContext(),heroes);
+        LinearLayoutManager heroLM = new LinearLayoutManager(getContext());
+        rvHeroes.setLayoutManager(heroLM);
+        rvHeroes.setAdapter(heroesAdapter);
+
+
+        /*
+        Spells
+        */
+        rvSpells = view.findViewById(R.id.rvSpells);
+        spells = new ArrayList<>();
+        spellsAdapter = new SpellsAdapter(getContext(), spells);
+        LinearLayoutManager spellLM = new LinearLayoutManager(getContext());
+        rvSpells.setLayoutManager(spellLM);
+        rvSpells.setAdapter(spellsAdapter);
+
+        /*
+        Troops
+         */
+
+        rvTroops = view.findViewById(R.id.rvTroops);
+        troops = new ArrayList<>();
+        troopsAdapter = new TroopsAdapter(getContext(), troops);
+        LinearLayoutManager troopsLM = new LinearLayoutManager(getContext());
+        rvTroops.setLayoutManager(troopsLM);
+        rvTroops.setAdapter(troopsAdapter);
+
+
         populate(bundle);
     }
 
@@ -115,9 +158,26 @@ public class TroopsFragment extends Fragment {
             @troops: List of troops and their levels
          */
         List<Troop> h = player.getHeroes();
+        List<Troop> s = player.getSpells();
+        List<Troop> t = player.getTroops();
 
-        adapter.clear();
-        adapter.addAll(h);
+        /*
+        Heroes
+        */
+        heroesAdapter.clear();
+        heroesAdapter.addAll(h);
+
+        /*
+        Spells
+        */
+        spellsAdapter.clear();
+        spellsAdapter.addAll(s);
+
+        /*
+        Troops
+         */
+        troopsAdapter.clear();
+        troopsAdapter.addAll(t);
     }
 
 
