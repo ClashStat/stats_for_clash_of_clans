@@ -54,7 +54,7 @@
 
     <TextView
         android:id="@+id/heroes"
-        android:layout_width="226dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/troops_Title"
         android:layout_alignParentStart="true"
@@ -96,24 +96,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHeroes"
-        android:layout_width="240dp"
-        android:layout_height="321dp"
+        android:layout_width="match_parent"
+        android:layout_height="499dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginTop="111dp"
-        android:layout_marginBottom="299dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="181dp"
-        android:layout_height="185dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="4dp"
-        android:src="@mipmap/ic_hero_foreground" />
+        android:layout_marginBottom="121dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="240dp"
