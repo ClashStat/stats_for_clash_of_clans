@@ -127,11 +127,23 @@ public class ProfileFragment extends Fragment {
         action_versus_battles.setText(String.format("Battle Won: %s", String.valueOf(playerBuilderBattleWon)));
         action_bhlevel.setText(String.format("Builder Hall Level: %s", String.valueOf(playerBuilderHallLevel)));
         action_user_id.setText(playerID);
-        action_clan_stat.setText(clanStat);
+        action_clan_stat.setText(getClanStat(clanStat));
 
         /*
         Logging to make sure variables print whats intended
          */
         Log.i(TAG, TAG+": " + playerName);
+    }
+
+    private String getClanStat(String clanStat) {
+        switch (clanStat){
+            case "coLeader":
+                return "Co-Leader";
+            case "admin":
+                return "Elder";
+            case "member":
+                return "Member";
+        }
+        return "";
     }
 }
