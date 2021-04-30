@@ -26,13 +26,4 @@
         android:layout_toStartOf="@+id/action_spellsicon"
         android:text="Spell Level" />
 
-    <ImageView
-        android:id="@+id/action_spellsicon"
-        android:layout_width="72dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="25dp"
-        tools:srcCompat="@tools:sample/avatars" />
 </RelativeLayout>
