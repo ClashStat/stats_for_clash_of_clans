@@ -9,22 +9,23 @@
         android:id="@+id/action_hero_name"
         android:layout_width="197dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:text="Hero Name"
-        android:textColor="#000000"
+        android:textColor="#673AB7"
         android:textSize="24sp" />
 
     <TextView
         android:id="@+id/action_hero_level"
-        android:layout_width="wrap_content"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="199dp"
+        android:layout_marginStart="366dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
         android:layout_toStartOf="@+id/action_heroicon"
         android:text="Hero Level"
-        android:textColor="#000000"
+        android:textColor="#1890C6"
         android:textSize="24sp" />
 </RelativeLayout>

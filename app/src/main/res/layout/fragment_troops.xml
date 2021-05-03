@@ -7,16 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".fragments.TroopsFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSpells"
-        android:layout_width="wrap_content"
-        android:layout_height="222dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="56dp"
-        tools:layout_marginTop="285dp" />
-
     <TextView
         android:id="@+id/troops_Title"
         android:layout_width="match_parent"
@@ -57,9 +47,9 @@
         android:id="@+id/line6"
         android:layout_width="match_parent"
         android:layout_height="5dp"
+        android:layout_below="@+id/rvTroops"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="0dp"
         android:background="@color/black" />
 
     <TextView
@@ -68,8 +58,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/troops_Title"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="1dp"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="3dp"
+        android:background="@android:color/holo_green_light"
         android:fontFamily="@font/wellflett"
         android:text="HEROES"
         android:textAlignment="center"
@@ -78,12 +69,14 @@
 
     <TextView
         android:id="@+id/spells"
-        android:layout_width="226dp"
+        android:background="@android:color/holo_green_light"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/line6"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="262dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/wellflett"
         android:text="SPELLS"
         android:textAlignment="center"
@@ -92,12 +85,14 @@
 
     <TextView
         android:id="@+id/troops"
-        android:layout_width="226dp"
+        android:layout_width="match_parent"
+        android:background="@android:color/holo_green_light"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/troops_Title"
+        android:layout_alignTop="@+id/line8"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="190dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="@font/wellflett"
         android:text="TROOPS"
         android:textAlignment="center"
@@ -106,23 +101,39 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHeroes"
-        android:layout_width="wrap_content"
-        android:layout_height="141dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="111dp"
-        android:layout_marginBottom="479dp" />
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="482dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTroops"
         android:layout_width="410dp"
         android:layout_height="145dp"
+        android:layout_below="@+id/troops"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="1dp"
-        tools:layout_marginTop="285dp" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="1dp"
+        tools:layout_marginTop="0dp" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSpells"
+        android:layout_width="wrap_content"
+        android:layout_height="259dp"
+        android:layout_below="@+id/spells"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="482dp" />
 
 </RelativeLayout>

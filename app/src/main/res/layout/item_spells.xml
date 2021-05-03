@@ -9,21 +9,28 @@
         android:id="@+id/action_spells_name"
         android:layout_width="202dp"
         android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="7dp"
         android:layout_marginEnd="164dp"
-        android:layout_toStartOf="@+id/action_spellsicon"
-        android:text="Spell Name" />
+        android:text="Spell Name"
+        android:textColor="#1E6A22"
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/action_spells_level"
-        android:layout_width="207dp"
-        android:layout_height="35dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="205dp"
+        android:layout_marginStart="370dp"
         android:layout_marginTop="3dp"
-        android:layout_marginEnd="-1dp"
-        android:layout_toStartOf="@+id/action_spellsicon"
-        android:text="Spell Level" />
+        android:layout_marginEnd="5dp"
+
+        android:layout_marginBottom="0dp"
+        android:text="Spell Level"
+        android:textColor="#1890C6"
+        android:textSize="24sp" />
 
 </RelativeLayout>
