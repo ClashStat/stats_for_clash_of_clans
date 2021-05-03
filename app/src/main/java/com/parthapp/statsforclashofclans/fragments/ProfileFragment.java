@@ -88,6 +88,8 @@ public class ProfileFragment extends Fragment {
         TextView action_trophies_builder = view.findViewById(R.id.action_trophies_builder);
         TextView action_versus_battles = view.findViewById(R.id.action_versus_battles);
         TextView action_bhlevel = view.findViewById(R.id.action_bhlevel);
+        TextView action_user_id = view.findViewById(R.id.action_user_id);
+        TextView action_clan_stat = view.findViewById(R.id.action_clan_stat);
 
         /*
         Converting string to a player class using gson by google.
@@ -107,13 +109,15 @@ public class ProfileFragment extends Fragment {
         Integer playerBuilderHallTrophies = player.getBuilderBaseTrophies();
         Integer playerBuilderHallLevel = player.getBuilderHallLevel();
         Integer playerBuilderBattleWon = player.getBuilderBaseWinCount();
+        String playerID = player.getTag();
+        String clanStat = player.getRole();
 
         /*
         Assigning fields
          */
         Picasso.with(getContext()).load(leagueIcon).into(action_player_league);
         action_username.setText(playerName);
-        action_level.setText(String.format("Level: %s", String.valueOf(playerLevel)));
+        action_level.setText(String.valueOf(playerLevel));
         Picasso.with(getContext()).load(clanIcon).into(action_clan_badge);
         action_clan.setText(playerClan);
         action_trophies.setText(String.format("Trophies: %s", String.valueOf(playerTrophies)));
@@ -122,10 +126,24 @@ public class ProfileFragment extends Fragment {
         action_trophies_builder.setText(String.format("Trophies: %s",String.valueOf(playerBuilderHallTrophies)));
         action_versus_battles.setText(String.format("Battle Won: %s", String.valueOf(playerBuilderBattleWon)));
         action_bhlevel.setText(String.format("Builder Hall Level: %s", String.valueOf(playerBuilderHallLevel)));
+        action_user_id.setText(playerID);
+        action_clan_stat.setText(getClanStat(clanStat));
 
         /*
         Logging to make sure variables print whats intended
          */
         Log.i(TAG, TAG+": " + playerName);
+    }
+
+    private String getClanStat(String clanStat) {
+        switch (clanStat){
+            case "coLeader":
+                return "Co-Leader";
+            case "admin":
+                return "Elder";
+            case "member":
+                return "Member";
+        }
+        return "";
     }
 }

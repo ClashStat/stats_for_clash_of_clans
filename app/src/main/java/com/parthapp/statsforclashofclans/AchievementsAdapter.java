@@ -17,15 +17,12 @@ import java.util.List;
 
 public class AchievementsAdapter extends RecyclerView.Adapter<AchievementsAdapter.ViewHolder>{
     Context context;
-        List <Achievement> achievements;
+    List <Achievement> achievements;
     public static final String TAG = "achievements_adapter";
 
-    public AchievementsAdapter(Context context, List<Achievement> achievements) {
+    public AchievementsAdapter(Context context, List <Achievement> achievements) {
         this.context = context;
         this.achievements = achievements;
-        for(Achievement a: achievements){
-            Log.i(TAG, a.getName());
-        }
     }
 
     //for each row, inflate the layout
