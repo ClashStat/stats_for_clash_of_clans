@@ -31,6 +31,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 - [x] There are distributed fragments that show user statistics
 - [x] The user can scroll to visualize data in Achievement Fragment
 - [x] The fragment in which the user is currently, changes color
+- [x] UI fixes broken, were modified and updated the UI.
 
 
 ### 2. Screen Archetypes
