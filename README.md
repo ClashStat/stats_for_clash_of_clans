@@ -68,7 +68,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
-<img src="/Walkthrough/Unit_12.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="/Walkthrough/Unit_13.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema 
 [This section will be completed in Unit 9]
@@ -85,19 +85,6 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 |       league      |File Object|      The warrior league the player is in   |
 |       clan        |File Object|      The clan's name                       |
 
-#### Troops
-| Property  |  Type | Description  |
-|-----------|-------|--------------|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-
-#### Achievement
-| Property  |  Type | Description  |
-|-----------|-------|--------------|
-|   |   |   |
-|   |   |   |
-|   |   |   |
 
 ### Networking
 #### List of Network Requests by Screen
@@ -105,10 +92,9 @@ This Android App will utilize the public API documentations of Clash of Clans wh
     - (Update/PUT) Analyze gamer tag to allow login
 
 - Profile Screen
-    - (Read/GET) Get user trophies
-    - (Read/GET) Get user townhall level
-    - (Read/GET) Get user builderhall level
-    - (Read/GET) Get user league
-    - (Read/GET) Get user clan
-- Troops Screen
-- Achievements Screen 
+    - (Read/GET) Get user Trophies
+    - (Read/GET) Get user Town Hall level
+    - (Read/GET) Get user Builder Hall level
+    - (Read/GET) Get user League   
+    - (Read/GET) Get user Clan
+
