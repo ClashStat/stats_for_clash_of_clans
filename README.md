@@ -27,8 +27,6 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 - [x] The user is able to sign-in using the #clashOfclansID
 - [x] The user is able to see Profile info for the account they logged in with
 - [x] The user is able to see the logo for the currentPlayerLeague and currentPlayerClan for visualization in Profile Fragment. 
-- [ ] User is able to log-out
-- [ ] The user can persistently stay logged-in unless they log-out manually
 - [x] The user can view info about their heroes
 - [x] There are distributed fragments that show user statistics
 - [x] The user can scroll to visualize data in Achievement Fragment
