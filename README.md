@@ -27,12 +27,11 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 - [x] The user is able to sign-in using the #clashOfclansID
 - [x] The user is able to see Profile info for the account they logged in with
 - [x] The user is able to see the logo for the currentPlayerLeague and currentPlayerClan for visualization in Profile Fragment. 
-- [ ] User is able to log-out
-- [ ] The user can persistently stay logged-in unless they log-out manually
 - [x] The user can view info about their heroes
 - [x] There are distributed fragments that show user statistics
 - [x] The user can scroll to visualize data in Achievement Fragment
 - [x] The fragment in which the user is currently, changes color
+- [x] UI fixes broken, were modified and updated the UI.
 
 
 ### 2. Screen Archetypes
@@ -68,7 +67,7 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 <img src="/Walkthrough/digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
-<img src="/Walkthrough/Unit_12.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="/Walkthrough/Unit_13.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ## Schema 
 [This section will be completed in Unit 9]
@@ -85,19 +84,6 @@ This Android App will utilize the public API documentations of Clash of Clans wh
 |       league      |File Object|      The warrior league the player is in   |
 |       clan        |File Object|      The clan's name                       |
 
-#### Troops
-| Property  |  Type | Description  |
-|-----------|-------|--------------|
-|   |   |   |
-|   |   |   |
-|   |   |   |
-
-#### Achievement
-| Property  |  Type | Description  |
-|-----------|-------|--------------|
-|   |   |   |
-|   |   |   |
-|   |   |   |
 
 ### Networking
 #### List of Network Requests by Screen
@@ -105,10 +91,9 @@ This Android App will utilize the public API documentations of Clash of Clans wh
     - (Update/PUT) Analyze gamer tag to allow login
 
 - Profile Screen
-    - (Read/GET) Get user trophies
-    - (Read/GET) Get user townhall level
-    - (Read/GET) Get user builderhall level
-    - (Read/GET) Get user league
-    - (Read/GET) Get user clan
-- Troops Screen
-- Achievements Screen 
+    - (Read/GET) Get user Trophies
+    - (Read/GET) Get user Town Hall level
+    - (Read/GET) Get user Builder Hall level
+    - (Read/GET) Get user League   
+    - (Read/GET) Get user Clan
+
